@@ -1,0 +1,16 @@
+   \begin{MyInnerBox}{Year 9 and below}
+      This is a version of a very well known logic puzzle. Try to figure it out by yourself though!\par
+      You are alone and lost, following a small path through a dark and eldritch forest. Shadows loom, strange rustles menace and the day is failing. You come to a fork in the path: there are two ancient oak trees and a peculiar sign grows in front of you and tells you that travelling down one path will lead you out of the forest, but walking down the other dooms you to a dreadful end. You may ask one question of one of the two wyrd oaks, they can only answer by pointing a gnarled branch. You are also told that one of the trees always lies while the other always tells the truth, but you have no way of telling which is which. What question should you ask to escape the deep dire wood?
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        First, you have to realise that just asking a question like "Which is the way out of the forest?" will not work, for if you have asked the truth-teller, they will point to the correct path, if you have asked the liar it will point to the wrong path, but you have learned nothing because you do not know which oak is which.\par
+        The trick is to smuggle two questions into one. If you ask one of the trees "Which path will the other tree point to if I ask it the correct way out?" let's see what happens.\par
+        Case 1. You ask the lying oak.\par
+        The lying oak knows the truthful tree will point to the way out if asked, but then lies and points to the path of doom.\par
+        Case 2. You ask the truthful oak.\par
+        The truthful tree knows the lying tree would point to the wrong path if asked for the way out, and tells the truth about that, thus pointing to the path of your gruesome demise.\par
+        So when you ask this question, you simply take the path not pointed to, and you have won your freedom from the forest, you go on your way celebrating the defeat of the quirky quercus and the cleverness of you. Notice that you never find out which tree is the liar and which is the truth-teller.
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

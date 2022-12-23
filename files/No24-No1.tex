@@ -1,0 +1,38 @@
+   \begin{MyInnerBox}{All years, question 1}
+     Welcome to the third installment of Portia's Caskets! This time, Portia tells you that every casket has been made by one of two famous Florentine craftsmen, Bellini and Cellini. She explains that Cellini always writes a false statement on the lids of the caskets he makes, while Bellini only puts true statements on the lids of the  caskets he builds. As before, Portia is truthful.\par
+     For this first puzzle, Portia tells you that she has hidden a dagger in one of the caskets. To pass this test, you must avoid choosing the casket with the dagger.\par\vspace{3mm}
+     \begin{tikzpicture}[scale=0.8,font=\fontfamily{TrajanP}\selectfont]
+          \path[draw,line width=3mm,DarkGoldenrod1,fill overzoom image=images/wp7316403.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,DarkGoldenrod4] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill overzoom image=images/goldbrush.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=15pt\TrajanP The dagger\\\TrajanP is in\\\TrajanP this casket.\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,Snow2,fill overzoom image=images/SilverFoil.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,white] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill overzoom image=images/silverBg.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=12pt\TrajanP  This casket \\\TrajanP is empty.\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,SlateGray4,fill overzoom image=images/LeadBg.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,black] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill=Ivory3,opacity=0.3] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=15pt\TrajanP At most one \\\TrajanP of these \\\TrajanP three caskets\\\TrajanP was fashioned\\\TrajanP by Bellini.\par};
+        \end{tikzpicture}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        We consider each container in turn, first assuming it was made by Bellini and checking for logical consistency, then assuming it was made by Cellini and checking again.\par
+        Let's start with the lead casket as it looks like it will give more information:\par
+        \underline{Case 1: The lead casket was made by Bellini}\par
+        \hspace{1em} The statement on the lead casket is true, and therefore the gold and silver caskets must have been manufactured by Cellini and thus have false statements on their lids.\par
+        \hspace{1em}The gold statement is a lie, the dagger is not in the gold casket. The silver statement is also a lie and so the dagger is in the silver casket.\par
+        There is no contradiction here, the dagger could be in the silver box.\par\medskip
+        \underline{Case 2: The lead casket was made by Cellini}\par
+        \hspace{1em} The statement of the lead casket is false, and therefore two of the caskets must have been fashioned by Bellini, not the lead one, so the gold and silver caskets must have true statements.\par
+        \hspace{1em} The gold statement is true so the dagger is in the gold box. The silver statement is also true and so the dagger is not in the silver casket.\par
+        There is no contradiction here, the dagger could be in the gold box.\par\medskip
+        The dagger could be in the gold or silver caskets, so we choose the lead one.\par\medskip
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

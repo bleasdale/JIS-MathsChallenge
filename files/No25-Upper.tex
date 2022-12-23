@@ -1,0 +1,39 @@
+\begin{MyInnerBox}{Year 9 and above}
+  \begin{tikzpicture}[scale=1]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (-4,0);
+    \coordinate (Q) at (4,0);
+    \coordinate (M) at (2.5,0);
+    \coordinate (R) at (-4,6.5);
+    \coordinate (S) at (4,4);
+    \node[below] at (O) {\(O\)};
+    \node[below] at (P) {\(P\)};
+    \node[below] at (Q) {\(Q\)};
+    \node[below] at (M) {\(M\)};
+    \path[name path=lquadr,save path=\lquadr] (M) arc(0:90:6.5);
+    \path[name path=semic,save path=\semic] (Q) arc(0:180:4);
+    \path[name intersections={of=lquadr and semic,by=K}];
+    % \draw[black,fill=CadetBlue1] [use path=\lquadr];
+    % \draw[black] [use path=\semic];
+    \begin{scope}
+      \clip (-4,0) rectangle (4,6.5);
+      \node[draw,name path=rquadr,save path=\rquadr] at (Q) [circle through={(K)}] {K};
+    \end{scope}
+    % \draw[black,fill=CadetBlue1] \lquadr -- (P) -- cycle;
+    % \draw[black,fill=Aquamarine2] (() -- \rquadr -- cycle;
+    % \draw[black,fill=white] (P) -- (O) -- ()) arc(0:180:4) node[name path=semic] {} -- cycle;
+    \begin{scope}
+      % \clip \lquadr;
+      % \fill[lime] \rquadr;
+    \end{scope}
+    % \path[name intersections={of=semic and lquadr,by=T}];
+    % \draw (O) -- (T);
+  \end{tikzpicture}
+  \iftoggle{SOLUTION}{%conditional output begin
+    \begin{MySolutionBox}
+      \(3x\) &= \(5\) $45$ \[x=3\]  r^{2} &= 34
+    \end{MySolutionBox}
+
+  }{}%conditional output end
+\end{MyInnerBox}
+

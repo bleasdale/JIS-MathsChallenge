@@ -1,0 +1,18 @@
+      \begin{MyInnerBox}{Year 9 and above}
+        Alice rides her bicycle up a certain hill at \(\SI{10}{\km\per\hour}\) and returns at \(\SI{20}{\km\per\hour}\). What is her average speed for the entire trip?
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Recall that average speed is the \emph{total distance} divided by the \emph{total time} taken to cover the distance. (You \emph{cannot} average the two given speeds!)\par
+        Let \(A\) be the average speed for the whole journey and let \(d\) be the distance up (and therefore down) the hill.\\
+        Let \(t_{u}\) and \(t_{d}\) be the times Alice takes to ride up and down the hill, respectively.
+        \begin{alignat*}{3}
+          \text{Up the hill:  }  10 &= \frac{d}{t_{u}}  & && \text{Down the hill:  }  20 &= \frac{d}{t_{d}}\\
+          t_{u} &= \frac{d}{10} & && t_{d} &= \frac{d}{20}\\
+          A &= \frac{total\, distance}{total\, time} = \frac{2d}{t_{u} + t_{d}}\\
+            &= \frac{2d}{\frac{d}{10} + \frac{d}{20}} = \frac{2d}{\frac{2d+d}{20}} = \frac{40d}{3d}\\
+            &= \frac{40}{3} = \SI[parse-numbers=false]{13.\overline{3}}{\km\per\hour}
+        \end{alignat*}
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

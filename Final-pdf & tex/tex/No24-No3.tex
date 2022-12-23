@@ -1,0 +1,36 @@
+      \begin{MyInnerBox}{All years, question 3}
+        Again each of the caskets has been fashioned either by Bellini or Cellini. Portia has again placed a portrait of herself in one of the three boxes. This time, to win the prize (a moment of inspiration on a foggy day) you must find the portrait and tell the maker of each casket.\par\vspace{3mm}
+        \begin{tikzpicture}[scale=0.8,font=\fontfamily{TrajanP}\selectfont]
+          \path[draw,line width=3mm,DarkGoldenrod1,fill overzoom image=images/wp7316403.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,DarkGoldenrod4] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill overzoom image=images/goldbrush.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=15pt\TrajanP The \textbf{Portrait} \\\TrajanP is in here.\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,Snow2,fill overzoom image=images/SilverFoil.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,white] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill overzoom image=images/silverBg.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=15pt\TrajanP The \textbf{Portrait} \\\TrajanP is in here.\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,SlateGray4,fill overzoom image=images/LeadBg.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,black] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill=Ivory3,opacity=0.3] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=15pt\TrajanP At least \\\TrajanP two of these\\\TrajanP caskets were\\\TrajanP fashioned by\\\TrajanP Cellini.\par};
+        \end{tikzpicture}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        We start by noticing the lead casket gives most information about the caskets:\par
+        \underline{Case 1: The lead casket was made by Bellini}\par
+        \hspace{1em} The statement on the lead box is true, this means that the gold and silver containers were made by Cellini.\par
+        \hspace{1em}Both the gold and silver statements are false. No contradictions. The portrait must be in the lead box and we have Gold: Cellini, Silver: Cellini, Lead: Bellini.\par\medskip
+        \underline{Case 2: The lead casket was made by Cellini}\par
+        \hspace{1em} The statement on the lead box is false. At most one of the caskets was made by Cellini.\par
+        \hspace{1em} Since we assumed the lead box was made by Cellini, the gold and silver caskets must have been made by Bellini, which means the statements on both are true.\par
+        \hspace{1em} But this leads to an inconsistency since both boxes claim to contain the portrait.\par
+        This case leads to an contradiction, Case 2 cannot be correct.\par\medskip
+        So we have confirmed Case 1: The portrait must be in the lead box and the gold and silver caskets were made by Cellini, while the lead casket was made by Bellini.\par\medskip
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

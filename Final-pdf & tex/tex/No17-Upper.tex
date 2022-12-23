@@ -1,0 +1,35 @@
+      \begin{MyInnerBox}{Year 9 and above}
+        Please read the introduction above, and try the first puzzle.\par
+        This time Portia explains to you that at least one of the three statements is true and that at least one of the three statements is false. Portia is truthful. Which casket holds the portrait?\par\vspace{3mm}
+        \begin{tikzpicture}[scale=0.8,font=\fontfamily{TrajanP}\selectfont]
+          \path[draw,line width=3mm,DarkGoldenrod1,fill overzoom image=images/wp7316403.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,4.5) to[bend left=45] (6.5,5)-- (1.5,5) to[bend left=45] (1,4.5) -- cycle;
+          \path[draw,line width=0.5mm,DarkGoldenrod4] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,4.1) to[bend left=45] (6.1,4.6)-- (1.9,4.6) to[bend left=45] (1.4,4.1) -- cycle;
+          \path[fill overzoom image=images/goldbrush.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,4.0) -- (2.0,4.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,3.0) {\baselineskip=15pt\TrajanP The \textbf{Portrait} is\\\TrajanP not in the\\\TrajanP silver casket\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,Snow2,fill overzoom image=images/SilverFoil.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,4.5) to[bend left=45] (6.5,5)-- (1.5,5) to[bend left=45] (1,4.5) -- cycle;
+          \path[draw,line width=0.5mm,white] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,4.1) to[bend left=45] (6.1,4.6)-- (1.9,4.6) to[bend left=45] (1.4,4.1) -- cycle;
+          \path[fill overzoom image=images/silverBg.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,4.0) -- (2.0,4.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,3.0) {\baselineskip=15pt\TrajanP The \textbf{Portrait} is\\\TrajanP not in\\\TrajanP this casket\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,SlateGray4,fill overzoom image=images/LeadBg.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,4.5) to[bend left=45] (6.5,5)-- (1.5,5) to[bend left=45] (1,4.5) -- cycle;
+          \path[draw,line width=0.5mm,black] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,4.1) to[bend left=45] (6.1,4.6)-- (1.9,4.6) to[bend left=45] (1.4,4.1) -- cycle;
+          \path[fill=Ivory3,opacity=0.3] (2.0,2.0) -- (6.0,2.0) -- (6.0,4.0) -- (2.0,4.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,3.0) {\baselineskip=15pt\TrajanP The \textbf{Portrait} is\\\TrajanP in this casket\par};
+        \end{tikzpicture}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        We could proceed by cases - taking each statement as true in turn - as in the solution to the first puzzle. To illustrate a different approach, we are going to proceed by cases but assume the portrait is in each casket in turn, and see what that leads to.\par
+        \underline{Case 1: The portrait is in the gold casket}\par
+        \hspace{1em}The gold and silver statements are true. The lead statement is false. No inconsistencies, but let's check the other two cases anyway.\par\medskip
+        \underline{Case 2: The portrait is in the silver casket}\par
+        \hspace{1em}The gold, silver and lead statements are all false, but this contradicts what Portia told you, that at least one statement must be true.\par\medskip
+        \underline{Case 3: The portrait is in the lead casket}\par
+        \hspace{1em}The gold, silver and lead statements are all true, again, this contradicts what Portia told you.\par\medskip
+        So the first case is correct, the portrait is in the gold casket.\par
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

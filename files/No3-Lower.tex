@@ -1,0 +1,41 @@
+   \begin{MyInnerSplitBox}{Year 8 and below}
+     Six identical rhombuses, each of area \(\SI{5}{\square\cm}\), form a star. The tips of the star are joined to form a regular hexagon, as shown in blue.\par
+     What is the area of the hexagon?
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        It's a good idea to start off by marking some angles on the diagram.\par
+        The hexagon is regular so all the internal angles are the same. The rhombuses (sides are all the same length) are identical, so that means the angles at the center, O, are all equal, so each rhombus has an acute angle of \(\SI{60}{\degree} \left(= \frac{\SI{360}{\degree}}{6}\right)\), see the blue angle \(I_{0}\widehat{O}I_{1}\).\par
+        Opposite angles in a rhombus are equal and the angles in a quadrilateral sum to \(\SI{360}{\degree}\) so the obtuse angles in each rhombus are \(\SI{120}{\degree}\), see the green angle \(H_{0}\widehat{I_{0}}O\).\par
+        At \(I_{n}\) the angles in each of the rhombuses are each \(\SI{120}{\degree}\) so angle \(H_{0}\widehat{I_{1}}H_{1}\) must also be \(\SI{120}{\degree}\). (See the pink angle for example.)\par
+      Each of the outer white triangles, for example, \(H_{1}I_{2}H_{2}\) are isosceles because the sides of the rhombuses are equal. This means that all the angles like \(I_{2}\widehat{H_{2}}H_{1}\) must be \(\SI{30}{\degree}\), see the yellow angles.\par
+      So each white triangle is exactly half a rhombus and has an area of \(\SI{2.5}{\square\cm}\). There are six of them having a total area of \(6\times 2.5 = \SI{15}{\square\cm}\). Add on the area of the six rhombuses for a total area of \(\SI{45}{\square\cm}\).
+      \end{MySolutionBox}
+      }{}%conditional output end
+      \tcblower
+      \begin{tikzpicture}[scale=1,
+        decoration={markings, mark= at position 0.5 with {\draw[-] (0,-2pt) -- (0,2pt);}}]
+        \newdimen\R
+        \R=2.5cm
+        \coordinate (O) at (0:0);
+        \foreach \x in {0,...,5}{
+          \path[draw,fill=yellow!10!white] (0:0) -- ({\x*60-30}:{\R*(1/sqrt(3))}) coordinate (I\x) -- (\x*60:\R) -- ({\x*60+30}:{\R*(1/sqrt(3))});
+          \path[draw,blue] ({\x*60}:\R) coordinate (H\x) -- ({(\x+1)*60}:\R);
+          \iftoggle{SOLUTION}{
+            \path (0:0) decorate { -- ({\x*60-30}:{\R*(1/sqrt(3))}) coordinate (I\x)} decorate { -- (\x*60:\R)} decorate { -- ({\x*60+30}:{\R*(1/sqrt(3))})};
+            \node[label={[font=\scriptsize,label distance=-2mm]{\x*60}:{\({H_{\x}}\)}}] at (H\x){};
+            \node[label={[font=\scriptsize,label distance=-1.5mm]{\x*60-30}:{\({I_{\x}}\)}}] at (I\x){};
+          }{
+            \node[blue] at ({\x*60}:1.25) {\Large 5};
+          }
+        }
+        \iftoggle{SOLUTION}{%
+          \node[label={[font=\scriptsize,xshift=-0.3cm, yshift=-0.35cm]O}] at (O) {};
+          \markangle{O}{I0}{I1}{3mm}{6mm}{\(\SI{60}{\degree}\)}{SteelBlue1}{0.5}{0.5}
+          \markangle{I0}{I3}{H0}{3mm}{5mm}{\(\SI{120}{\degree}\)}{DarkSeaGreen2}{0.5}{0.5}
+          \markangle{I2}{H2}{H1}{3mm}{5mm}{\(\SI{120}{\degree}\)}{LightPink1}{0.5}{0.5}
+          \markangle{H2}{I2}{H1}{3mm}{6mm}{\(\SI{30}{\degree}\)}{Gold1}{0.5}{0.5}
+          \markangle{H1}{I2}{H2}{3mm}{5mm}{\(\SI{30}{\degree}\)}{Gold1}{0.5}{0.5}
+        }{}
+      \end{tikzpicture}
+    \end{MyInnerSplitBox}
+

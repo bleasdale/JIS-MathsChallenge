@@ -1,0 +1,20 @@
+      \begin{MyInnerBox}{Year 9 and above}
+        Without calculating the answer, is
+        \[
+          15.99 \div 3.99
+        \]
+        more than \(4\), less than \(4\) or exactly \(4\)?
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        If we think of this quotient as being
+        \begin{align*}
+          \frac{15.99}{3.99} & = \frac{4 + 4 + 4 + 3.99}{3.99}\\
+          &= \frac{4}{3.99} + \frac{4}{3.99} + \frac{4}{3.99} + \frac{3.99}{3.99}\\
+          &= slightly > 4 + slightly > 4 + slightly > 4 + 1
+        \end{align*}
+        So the answer must be a bit larger than \(4\).\\
+      Or, we might start with \(\frac{16}{4}\) and note that to get \(\frac{15.99}{3.99}\) the numerator and the denominator have each been decreased by the same amount, \(0.01\). But proportionally the denominator has been decreased by more than the numerator (because it is smaller than the numerator) so the quotient must \emph{increase}.
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

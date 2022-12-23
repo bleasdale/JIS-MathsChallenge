@@ -1,0 +1,37 @@
+    \begin{MyInnerBox}{Year 10 and above}
+       One hundred people take part in a race in which no-one can tie. Later, after the race, every competitor is asked about what position they came, and all answer, giving a number between 1 and 100. The sum of all their answers is 4000. What is the minimum number of people who have lied about what position in the race they achieved?\par
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        If all the competitors told the truth about their final position in the race then the sum of their answers should be \(1+2+3+\cdots +98+99+100\). This is an arithmetic sequence with first term \(a=1\) and constant difference \(d=1\). We can use the formula for the sum of the first \(n\) digits.
+        \begin{align*}
+          S_{n}&=\frac{n}{2}\left(2a+(n-1)d\right)\\
+          S_{100}&=\frac{100}{2}\left(2\times 1 + (100-1)\times 1\right)\\
+          S_{100}&=50\times(2+99) = 5050
+      \end{align*}
+        Or we could notice, as Gauss did (aged 7!), that rearranging our sum:
+        \begin{align*}
+          (1+100) + (2+99) +\cdots+ (49+52) + (50+51) &= 101 + 101 + \cdots + 101 + 101\\
+          \shortintertext{(\(50\) pairs of digits, each pair adding to \(101\))}
+                                                      &= 101\times 50\\
+        &=5050
+        \end{align*}
+        The scores obtained from the runners is only \(4000\) though, there is \(5050-4000=1050\) worth of fibbing going on!\par
+        Now, for the minimum number of people lying, we want the 'missing' \(1050\) to be accounted for by the smallest number of people, so we choose the people who came \(100^{th},\; 99^{th}\) and so on.\par
+        Each of these people has to report a made up position, to minimise the number of liars, the number they give should be as small as possible, so we'll assume they all say they came first!\par
+        Let's see what's happening:\par\medskip
+        \begin{tabular}{l|l|l|l|l|l}
+          Person & Real & False & Amount & Total & Total\\
+          number & place & place & reduced & before & after\\\hline
+          \(1\) & \(100\) & \(1\) & \(99\) & \(5050\) & \(4951\)\\
+          \(2\) & \(99\) & \(1\) & \(98\) & \(4951\) & \(4853\)\\
+          \(3\) & \(98\) & \(1\) & \(97\) & \(4853\) & \(4756\)\\
+          \(\vdots\) & \(\vdots\) & \(\vdots\) & \(\vdots\) & \(\vdots\)\\
+          \(11\) & \(90\) & \(1\) & \(89\) & \(4105\) & \(4016\)\\ \hline
+           & & & \(1034\) & & \\
+        \end{tabular}\par\medskip
+        Eleven competitors lying has reduced the total to \(4016\), we need one more person to lie about their finishing place to make the total of scores \(4000\). If the person in \(17^{th}\) place says they came first, then the sum of scores is \(4000\) as required.\par
+        So twelve people is the minimum number who lied.\par
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

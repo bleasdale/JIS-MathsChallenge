@@ -1,0 +1,16 @@
+   \begin{MyInnerBox}{Year 8 and below}
+     The pages of a book are numbered; \(1,\;2,\;3,\ldots\)\par
+     It takes \(852\) digits to number all the pages of the book.\par
+     What is the number of the last page of the book?\par
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        From page 1 to page 9 we need \(9\) digits.\par
+        From page 10 to page 99 we need \(90\times 2=180\) digits. \(189\) digits in total so far.\par
+        We have \(852-189=663\) digits left, and we have up to page 99 so far.\par
+        From page 100 to page 999 we would need \(900\times 3=2700\) digits.\par
+        With \(663\) digits we can number \(663\div 3=221\) three-digit pages.\par
+        Starting with page \(100\) that means we would reach page \(220\).
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

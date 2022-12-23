@@ -1,0 +1,80 @@
+    \begin{MyInnerSplitBox}{Year 9 and above}
+      In a regular pentagram (5-pointed star), (i) show that the angle at each point is \(\SI{36}{\degree}\).\par
+      Thus the sum of the angles in all five points is \(\SI{180}{\degree}\).\par
+      Now, (ii) what is the sum of the angles in all five points of an irregular pentagram, as illustrated in the second diagram?
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        (i) Consider the quadrilateral shown in bold on the regular pentagram. We know that its internal angles should sum to \(\SI{360}{\degree}\) and we know that three of its interior angles are the same, that is, three times the interior angle of a regular pentagon. Recall the sum of interior angles of an n-sided polygon is \(180\times (n-2)\), so for a pentagon,
+        \begin{align*}
+          180\times 3 = \SI{540}{\degree} \text{, and one angle is } \frac{540}{5} = \SI{108}{\degree}
+          \shortintertext{Then the angle at the point}
+          = 360 - (3\times 108) = \SI{36}{\degree}
+        \end{align*}
+        (ii) There is a nice graphical solution to this. Place an arrow along one side of the irregular pentagram. Rotate the arrow around its base, clockwise, so that it lies over the line indicated by the green arrow (1). Imagine that at the same time the red line shrings to the size of the line it lies over. Now, we rotate the red line again clockwise, this time around the arrow tip (see green arrow 2). The next rotation of the red line is shown with green arrow 3. If we repeat this two more times the red arrow will lie over the same line it started on, but, the arrow will be at the other end. In other words, we have turned the red line through all the angles of the pentagram and it has turned \(\SI{180}{\degree}\). So the sum of the angles in all five points is \(\SI{180}{\degree}\)! Isn't that neat?
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \tcblower
+    \begin{tikzpicture}[scale=1]
+      \pgfmathsetmacro{\side}{5} %length of line
+      \pgfmathsetmacro{\ang}{60} %angle of the first line anticlockwise from x-axis
+      \draw[blue] (45:{sqrt(2)}) coordinate (R0) -- ++(\ang:\side) coordinate (R1) -- ++({\ang+216}:\side) coordinate (R2) -- ++({\ang+72}:\side) coordinate (R3) -- ++({\ang+288}:\side) coordinate (R4) -- ++({\ang+144}:\side);
+      % \draw[green] (1,1) -- ++(\ang:3)  -- ([turn]-144:3) -- ([turn]-144:3) -- ([turn]-144:3) -- ([turn]-144:3); % alternative using 'turn' notation, easier!
+      \iftoggle{SOLUTION}{%
+      \tkzInterLL(R0,R1)(R2,R3) \tkzGetPoint{Ra}
+      \tkzInterLL(R3,R4)(R0,R1) \tkzGetPoint{Rb}
+      \tkzInterLL(R1,R2)(R3,R4) \tkzGetPoint{Rc}
+      \draw[blue,ultra thick] (R2) -- (Ra) -- (Rb) -- (Rc) -- cycle;
+      \markangle{R2}{R3}{R1}{6mm}{8mm}{\(\SI{36}{\degree}\)}{red}{0.5}{0.5}
+      \markangle{Ra}{R2}{R1}{3mm}{5.5mm}{\(\SI{108}{\degree}\)}{SteelBlue1}{0.5}{0.5}
+      \markangle{Rb}{R0}{R4}{3mm}{5mm}{\(\SI{108}{\degree}\)}{SteelBlue1}{0.5}{0.5}
+      \markangle{Rc}{R3}{R2}{3mm}{5.5mm}{\(\SI{108}{\degree}\)}{SteelBlue1}{0.5}{0.5}
+    }{}
+    \end{tikzpicture}%
+    \par\vspace{0.5cm}
+    \begin{tikzpicture}[scale=1]
+      \pgfmathsetmacro{\side}{4} %length of line
+      \pgfmathsetmacro{\ang}{60} %angle of the first line anticlockwise from x-axis
+      \draw[] (45:{sqrt(2)}) coordinate (P1)-- ++(\ang:\side) coordinate (P2) -- ++({\ang+225}:{\side+1.5}) coordinate (P3) -- ++({\ang+62}:{\side+1.75}) coordinate (P4) -- ++({\ang+289}:\side) coordinate (P5) -- ++({\ang+147.7}:{\side+0.86});
+      \iftoggle{SOLUTION}{
+        \draw[ultra thick,red,-Stealth] (P2) -- (P3);
+        \coordinate (c) at ($(P2)!0.25!(P3)$);
+        \coordinate (d) at ($(c)!1.1cm!-110:(P3)$);
+        \draw[-Stealth,green,thick] (c) node[black,below left] {\(1\)} to [bend left] (d);
+        \draw[ultra thick,red!60,-Stealth] (P2) -- (P1);
+        \coordinate (e) at ($(P1)!0.25!(P2)$);
+        \coordinate (f) at ($(e)!0.5cm!250:(P2)$);
+        \draw[Stealth-,green,thick] (f) node[black,above right] {\(2\)} to [bend right] (e);
+        \draw[ultra thick,red!30,-Stealth] (P5) -- (P1);
+        \draw[ultra thick,red!15,-Stealth] (P5) -- (P4);
+        \coordinate (g) at ($(P5)!0.25!(P1)$);
+        \coordinate (h) at ($(g)!0.7cm!60:(P5)$);
+        \draw[-Stealth,green,thick] (g) node[black,above left] {\(3\)} to [bend left] (h);
+      }{}
+    \end{tikzpicture}
+    \end{MyInnerSplitBox}
+
+
+    %%%%%%%%%%%% 5-pointed star
+    % \begin{tikzpicture}[scale=1]
+    %   \pgfmathsetmacro{\ct}{3} % distance center to tip
+    %   \pgfmathsetmacro{\cc}{\ct*sin(18)/sin(126)} % distance center to corner (sine rule)
+    %   % star
+    %   \draw[thick,blue] (0,0)
+    %       +(90-0*36:\ct) coordinate(T1)
+    %       foreach[evaluate=\x as \nc using int((\x+1)/2),   % number for corner coordinates
+    %               evaluate=\x as \nt using int((\x+1)/2+1)] % number for tip coordinates
+    %           \x in {1,3,...,9}{
+    %           -- +(90-\x*36:\cc) coordinate(C\nc) -- +({90-(\x+1)*36}:\ct) coordinate(T\nt)}
+    %       -- cycle;
+    %     \markangle{T1}{T3}{T4}{6mm}{8mm}{\(\SI{36}{\degree}\)}{SteelBlue1}{0.5}{0.5}
+    % \end{tikzpicture}
+    %%%%%%%%%%%%%%%% Pentagram (regular)
+     % % Turtles!
+     %  \tikz[turtle/distance=4.5cm]
+     %  \draw[turtle=home,]
+     %    \foreach \i in {1,...,5}{
+     %      [turtle={forward,right=144}]
+     %    }
+
+% Irregular pentagram with turtle
+     % \draw[turtle={home,left=40,forward=3cm,right=150,forward=4cm,right=150,forward=3cm,right=110,forward=3cm,right=160,forward=3.4cm}]

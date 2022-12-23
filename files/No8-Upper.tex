@@ -1,0 +1,56 @@
+      \begin{MyInnerSplitBox}{Year 9 and above}
+        The larger square has sides of length \SI{20}{\cm}, the smaller square has sides of length \SI{10}{\cm}. Find the shaded area.
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Label some vertices and add the line DR, perpendicular to MN and through D. EQ has length \(a\), as EC is \SI{20}{\cm}, PC must be \(20-a-10=10-a\).\par
+        Now consider \(\bigtriangleup EMQ\) and \(\angle MEQ\).\par
+        As ABCE and MNPQ are both squares, \(EC\parallel MN\).\par
+        So \(\angle DMN = \angle MEQ\) and, \(\bigtriangleup EMQ\) and \(\bigtriangleup DMR\) are similar.\par
+        Notice also that by the same reasoning \(\angle PCN\) and \(\angle RND\) are equal.\par
+        Now, if \(MR = a\) then \(DR=10\) by similar triangles. Then if \(DR=10\) then \(RN = 10-a\) by similarity (congruency) with \(\bigtriangleup CNP\).\par
+        So assuming \(MR=a\) leads to \(RN=10-a\) and we have \(MR+RN=a + (10-a) = 10\) which is correct.
+      We have shown DR is \SI{10}{\cm}, so \(\bigtriangleup MEQ\) and \(\bigtriangleup DMN\) are congruent, they have the same area. Also \(\bigtriangleup PCN\) and \(\bigtriangleup DNR\) have the same area.\par
+        The shaded area is \(a\times 10 + (10-a)\times 10 = \SI{100}{\square\cm}\)\par
+        You can see this looks right if you imagine folding the shaded triangles into the \(10\times 10\) square along their boundaries with the square.\par
+        We have shown that the position of the smaller square along the top of the larger square, does not affect the shaded area.\par
+        % A longer way to answer this would be to say that point A is the origin \((0,0)\) and find the equation of the two lines ED and CD, then show that the y-coordinate of their point of intersection is \(10\).\par
+      \end{MySolutionBox}
+      }{}%conditional output end
+        \tcblower
+        \begin{tikzpicture}[scale=0.7,line join=bevel]
+          \coordinate (A) at (0,0);
+          \iftoggle{SOLUTION}{\node at (A) [left] {A};}{}
+          \coordinate (B) at (6,0);
+          \iftoggle{SOLUTION}{\node at (B) [right] {B};}{}
+          \coordinate (C) at (6,6);
+          \iftoggle{SOLUTION}{\node at (C) [right] {C};}{}
+          \coordinate (D) at (2,12);
+          \iftoggle{SOLUTION}{\node at (D) [left] {D};}{}
+          \coordinate (E) at (0,6);
+          \iftoggle{SOLUTION}{\node at (E) [left] {E};}{}
+          \coordinate (M) at (1,9);
+          \iftoggle{SOLUTION}{\node at (M) [left] {M};}{}
+          \coordinate (N) at (4,9);
+          \iftoggle{SOLUTION}{\node at (N) [right] {N};}{}
+          \coordinate (P) at (4,6);
+          \iftoggle{SOLUTION}{\node at (P) [below] {P};}{}
+          \coordinate (Q) at (1,6);
+          \iftoggle{SOLUTION}{\node at (Q) [below] {Q};}{}
+          \fill[Khaki1] (E) -- (M) -- (Q);
+          \fill[Khaki1] (M) -- (D) -- (N);
+          \fill[Khaki1] (N) -- (C) -- (P);
+          \draw[] (E) -- (C) -- (D) -- (E) -- (A) -- (B) -- (C);
+          \draw[] (Q) -- (M) -- (N) -- (P);
+          \iftoggle{SOLUTION}{
+          \draw[dashed,gray] (D) -- (2,9) coordinate (R);
+          \node at (R) [below] {R};
+          \node at (3,0) [above] {\(20\)};
+          \node at (0,3) [right] {\(20\)};
+          \node at (1,7.5) [right] {\(10\)};
+          \node at (2.5,6) [below] {\(10\)};
+          \node at (0.5,6) [below=0mm,blue] {\(a\)};
+          \node at (5,6) [below=-1mm,blue] {\(10-a\)};
+          }{}
+        \end{tikzpicture}
+    \end{MyInnerSplitBox}
+

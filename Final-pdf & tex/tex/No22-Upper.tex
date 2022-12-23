@@ -1,0 +1,43 @@
+      \begin{MyInnerBox}{Year 9 and above}
+        Find two rational numbers, both less than ten, whose product is ninety-nine.\par
+        A rational number is a fraction \(\frac{a}{b}\), where \(b\neq 0\) and \(a,b\in\mathbb{Z}\), that is, \(a\) and \(b\) are both integers.\par
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        We are looking for \(\frac{a}{b}\) and \(\frac{c}{d}\) such that
+        \begin{align*}
+          \frac{a}{b}\times\frac{c}{d} &= 99\\
+          \shortintertext{We can try starting with \(c=99\)}
+          \frac{a}{b}\times\frac{99}{d} &= 99\\
+          \shortintertext{Then we must have}
+          \frac{a}{bd} &= 1\\
+          \shortintertext{and we must have}
+          \frac{a}{b} &< 10,\quad \frac{99}{d} < 10\\
+          \shortintertext{Multiplying numerator and denominator by \(999\):}
+          \frac{999}{b} \times\frac{99}{999} &= 99\\
+          \shortintertext{and then by \(100\):}
+          \frac{999}{100}\times\frac{99\times 100}{999} &= 99\\
+          \frac{999}{100}\times\frac{9900}{999} &= 99\\
+          \shortintertext{Where}
+          \frac{999}{100} = 9.99 < 10\qquad &\text{and}\qquad\frac{9900}{999} = 9.\overline{909} < 10
+          \intertext{\underline{An alternative way:} Write \(99\) as a product of two of its factors,}
+          9\times 11 &= 99\\
+          \shortintertext{then multiply by a fraction and its reciprocal,}
+          \frac{13}{11}\times 9\quad\times\quad\frac{11}{13}\times 11 &=99\\
+          \shortintertext{Notice that we multiply \(9\) by the smaller fraction and \(11\) by the larger.}
+          \shortintertext{But,}
+          \frac{13}{7}\times 9 & > 10
+          \shortintertext{so we need to try smaller fractions:}
+          \frac{11}{10}\times 9\quad\times\quad\frac{10}{11}\times 11 &=99
+          \shortintertext{but}
+          \frac{10}{11}\times 11 &\nless 10
+          \shortintertext{trying again:}
+          \frac{22}{21}\times 9\quad\times\quad\frac{21}{22}\times 11 &= 99
+          \shortintertext{but still \((21\div 22)\times 11 >10\) so we try again,}
+          \frac{21}{19}\times 9\quad\times\quad\frac{19}{21}\times 11 &= 999
+          \shortintertext{At last!}
+          \frac{189}{19} = 9.947\dots < 10\qquad &\text{and}\qquad\frac{209}{21} = 9.952\dots < 10
+        \end{align*}
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

@@ -1,0 +1,30 @@
+      \begin{MyInnerBox}{Year 9 and above}
+        Find the green angle.\par
+        \begin{tikzpicture}[scale=1]
+          \coordinate (A) at (4,5);
+          \coordinate (B) at (0,2);
+          \coordinate (C) at (4,0);
+          \coordinate (D) at (7,1);
+          \draw[decoration={markings,mark=at position 0.5 with {\draw(-1pt,-3pt) -- (1pt,3pt);}},postaction={decorate}] (A) -- (B);
+          \draw[decoration={markings,mark=at position 0.5 with {\draw(-1pt,-3pt) -- (1pt,3pt);}},postaction={decorate}] (A) -- (C);
+          \draw[decoration={markings,mark=at position 0.5 with {\draw(-1pt,-3pt) -- (1pt,3pt);}},postaction={decorate}] (A) -- (D);
+          \draw (B) -- (D) (C) -- (D);
+          \markangle{A}{B}{C}{5mm}{7mm}{\(\SI{50}{\degree}\)}{blue!70}{0.7}{0.7}
+          \markangle{D}{B}{C}{5mm}{7mm}{}{green!70}{0.7}{0.7}
+          \iftoggle{SOLUTION}{
+            \node[above] at (A) {\(A\)};
+            \node[below left] at (B) {\(B\)};
+            \node[below] at (C) {\(C\)};
+            \node[below right] at (D) {\(D\)};
+            \draw[thick,blue] ([shift=(210:5cm)]A) arc (210:320:5cm);
+          }{}
+        \end{tikzpicture}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        We are told that \(AB=AC=AD\). If we take these three lengths as the radii of a circle centre \(A\), then the arc \(BC\) subtends an angle of \(\SI{50}{\degree}\) at the centre.\par
+        We can see that the same arc \(BC\) subtends the green angle at \(D\) on the circumference of the circle.\par
+        By the circle theorem: angle at the centre is twice the angle at the circumference (see No. 16), \(\angle BDC = \frac{1}{2}\angle BAC\), so the green angle is \(\SI{25}{\degree}\)\par
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

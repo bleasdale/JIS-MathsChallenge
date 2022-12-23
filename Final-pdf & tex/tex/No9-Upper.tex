@@ -1,0 +1,49 @@
+      \begin{MyInnerBox}{Year 10 and above}
+     Alnitak and Mintaka are \SI{300}{\kilo\m} apart. They travel towards each other in a straight line. Each travels at their own constant speed.\par
+     If they both set off at 9:00 a.m. then they meet at noon.\par
+     If Alnitak sets off at 6:00 a.m. and Mintaka sets off at 10:00 a.m. they still meet at noon.\par
+     What speed does Alnitak travel at and what speed does Mintaka travel at?
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Since their speeds are constant we can use the \[Speed = \frac{distance}{time}\] formula.\par
+        Let \(s_{a}\) be Alnitak's speed and let \(s_{m}\) be Mintaka's speed.\par
+        We will let \(d_{1}\) be the distance from Alnitak's starting point to the place they meet when they both depart at 9 a.m., and \(d_{2}\) will be the distance from Alnitak's starting point to the place they meet when they depart at 6 a.m. and 10 a.m.\par
+        In the first case, distance \(d_{1}\) is covered by Alnitak in \(\SI{3}{\hour}\). Then Mintaka travels \(300-d_{1}\) in 3 hours.\par
+        In the second case, distance \(d_{2}\) is travelled by Alnitak in \(\SI{6}{\hour}\). Then Mintaka covers \(300-d_{2}\) in 2 hours.\par\medskip
+      \begin{minipage}{0.4\textwidth}
+        \underline{Case 1: Both depart at 9 a.m.}
+        \begin{flalign*}
+          s_{a} &= \frac{d_{1}}{3} &\\
+          s_{m} &= \frac{300-d_{1}}{3} &
+          \shortintertext{Eliminate \(d_{1}\) using these two equations.}
+          3s_{a} &= 300-3s_{m} &\\
+          3s_{a} + 3s_{m} &= 300 & \\
+          s_{a} + s_{m} &= 100 &\\
+        \end{flalign*}
+      \end{minipage}%
+      \hfill
+      \begin{minipage}{0.4\textwidth}
+        \underline{Case 2: 6 a.m. and 10 a.m. departures}
+        \begin{flalign*}
+          s_{a} &= \frac{d_{2}}{6} & \\
+          s_{m} &= \frac{300-d_{2}}{2} &
+          \shortintertext{Eliminate \(d_{2}\) using these two equations.}
+          6s_{a} &= 300 - 2s_{m} & \\
+          6s_{a} + 2s_{m} &= 300 & \\
+          3s_{a} + s_{m} &= 150 & \\
+        \end{flalign*}
+      \end{minipage}\par
+          Now we have a pair of simultaneous equations:\par
+        \[
+          \begin{rcases}
+            s_{a} + s_{m} &= 100  \\[0em]
+            3s_{a} + s_{m} &= 150
+          \end{rcases}
+        \]
+        Solving, we find that\par
+        \indent Alnitak's speed \(s_{a} = \SI{25}{\km\per\hour}\), and\par
+        Mintaka's speed \(s_{m} = \SI{75}{\km\per\hour}\).
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

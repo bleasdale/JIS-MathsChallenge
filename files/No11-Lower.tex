@@ -1,0 +1,73 @@
+   \begin{MyInnerBox}{Year 8 and below}
+     \begin{minipage}[b]{0.33\textwidth}
+     \begin{tikzpicture}[scale=0.85]
+        \tcircle{0}{0}{3}{12}{0.05}{black};
+        \filldraw[yellow,fill=yellow] (C8) -- (C3) -- (C4) -- cycle;
+        \draw[yellow,fill=yellow] (C3) arc [start angle=90, end angle=120, radius=3] -- cycle;
+        \draw[thick, black] (C8) -- (C3) (C8) -- (C4);
+        \filldraw[yellow,fill=yellow] (C8) -- (C5) -- (C6) -- cycle;
+        \draw[yellow,fill=yellow] (C5) arc [start angle=150, end angle=180, radius=3] -- cycle;
+        \draw[thick, black] (C8) -- (C5) (C8) -- (C6);
+        \filldraw[yellow,fill=yellow] (C8) -- (C1) -- (C2) -- cycle;
+        \draw[yellow,fill=yellow] (C1) arc [start angle=30, end angle=60, radius=3] -- cycle;
+        \draw[thick, black] (C8) -- (C1) (C8) -- (C2);
+        \filldraw[yellow,fill=yellow] (C8) -- (C11) -- (C12) -- cycle;
+        \draw[yellow,fill=yellow] (C11) arc [start angle=-30, end angle=0, radius=3] -- cycle;
+        \draw[thick, black] (C8) -- (C11) (C8) -- (C12);
+        % \filldraw[yellow,fill=yellow] (C8) -- (C9) -- (C10) -- cycle;
+        \draw[yellow,fill=yellow] (C8) arc [start angle=-120, end angle=-60, radius=3] -- cycle;
+        \draw[thick, black] (C8) -- (C10);
+        \draw (O) circle (\radius);
+        \iftoggle{SOLUTION}{
+        \draw[-Stealth,blue] (0,-2.78) -- (-2.4,-1.5);
+        \draw[-Stealth,blue] (1,-1.5) -- (-2,0);
+        \draw[-Stealth,blue] (1.3,1) -- (0,1.7);
+        }{}
+      \end{tikzpicture}%
+    \end{minipage}%
+      % \hspace{0.3cm}
+     \begin{minipage}[b]{0.33\textwidth}
+       \raisebox{-3mm}{
+      \begin{tikzpicture}[scale=0.85]
+        \tcircle{0}{0}{3}{12}{0.05}{black};
+        \draw[HotPink1,fill=HotPink1] (O) -- (C2) arc [start angle=60, end angle=90, radius=3] --cycle;
+        \draw[thick,black] (O) -- (C2) (O) -- (C3);
+        \draw[HotPink1,fill=HotPink1] (O) -- (C5) arc [start angle=150, end angle=180, radius=3] --cycle;
+        \draw[thick,black] (O) -- (C5) (O) -- (C6);
+        \draw[HotPink1,fill=HotPink1] (O) -- (C7) arc [start angle=210, end angle=300, radius=3] --cycle;
+        \draw[thick,black] (O) -- (C7) (O) -- (C10);
+        \draw[HotPink1,fill=HotPink1] (O) -- (C11) arc [start angle=330, end angle=360, radius=3] --cycle;
+        \draw[thick,black] (O) -- (C11) (O) -- (C12);
+        \draw (O) circle (\radius);
+        \iftoggle{SOLUTION}{
+        \draw[-Stealth,blue] (2.0,-0.5) -- (1.3,-1.2);
+        \draw[-Stealth,blue] (0.7,2.3) -- (-2,-0.5);
+        }{}
+    \end{tikzpicture}}%
+    \end{minipage}%
+      % \hspace{0.3cm}
+     \begin{minipage}[b]{0.33\textwidth}
+      \begin{tikzpicture}[scale=0.85]
+        \tcircle{0}{0}{3}{12}{0.05}{black};
+        \draw[Cyan1,fill=Cyan1] (C11) arc [start angle=-30, end angle=90, radius=3] --cycle;
+        \draw[thick,black] (C11) -- (C3);
+        \draw[Cyan1,fill=Cyan1] (C5) arc [start angle=150, end angle=210, radius=3] --cycle;
+        \draw[thick,black] (C5) -- (C7);
+        \draw[thick,black,fill=Cyan1] (C4) -- (C8) -- (C10) --cycle;
+        \draw (O) circle (\radius);
+        \iftoggle{SOLUTION}{
+          \draw[-Stealth,blue] (-2.8,0) -- (0,-2.8) node[pos=0.3,above] {\(1\)};
+          \draw[-Stealth,blue] (1.7,1.7) -- (-2,0) node[midway, above] {\(2\)};
+        }{}
+      \end{tikzpicture}
+    \end{minipage}\par%
+      Each picture is a circle with twelve points spread equally around the circumference, like the hour marks on a clock face. Find the proportion of each circle that is shaded. Three questions in one!
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        The first one is not so difficult. Notice that each of the yellow shaded parts has an unshaded 'partner' of exactly the same shape. Placing the yellow shaded areas to the right of the diameter into their congruent white-shade areas on the left of the diameter, we see that half of the circle is shaded yellow.\par
+        The second, similarly, two of the pink-shaded 'hours' fit into two of the white-shaded hours, filling one half of the circle.\par
+        The third circle, is a bit trickier, but again, we can move around the cyan-shaded segments. First, notice that the segment on the left hand side fits exactly into the congruent segment below the cyan triangle. Now we can put the segment at the upper right of the circle into the congruent white segment on the left of the triangle. The answer, again, is half the circle is shaded.\par
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

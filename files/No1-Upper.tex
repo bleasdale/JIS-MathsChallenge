@@ -1,0 +1,35 @@
+      \begin{MyInnerBox}{Year 9 and above}
+      Find the integer solutions to this pair of equations.
+      \begin{align}
+        ab+c &= 2020\\
+        a+bc &= 2021
+      \end{align}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Subtract the first equation from the second.
+        \begin{align*}
+          a + bc - ab - c &= 1\\
+          a(1-b) - c(1-b) &= 1\\
+          (a-c)(1-b) &= 1\\
+          \intertext{Notice that for the last line to be true, either (Case 1),}
+          a-c = 1, \text{ and } 1-b &= 1\\
+          \shortintertext{or (Case 2),}
+          a-c = -1, \text{ and } 1-b &= -1\\
+          \shortintertext{Case 1}
+          \intertext{Since \(1-b = 1\) we have \(b=0\). Substituting this into the original two equations (1) \& (2), we have one set of solutions:}
+          a &= 2021\\
+          b &= 0\\
+          c &= 2020
+          \shortintertext{Case 2}
+          \intertext{Since \(1-b = -1\) we have \(b = 2\). Substituting this into the original two equations we get a pair of simultaneous equations:}
+          2a + c &= 2020\\
+          a + 2c &= 2021
+          \intertext{Solving by elimination or substitution we obtain the second set of solutions:}
+          a &= 673\\
+          b &= 2\\
+          c &= 674
+        \end{align*}
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

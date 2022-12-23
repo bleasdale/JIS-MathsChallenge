@@ -1,0 +1,41 @@
+   \begin{MyInnerBox}{All years, question 1}
+     We return to Portia's caskets! (See No. 17) As before, to win the prize (a seven kilometer gallop on a giant hedgehog) you must say which casket holds the portrait. This time each casket has two statements on its lid. Portia tells you that, no lid contains more than one false statement. Portia is truthful. Where is Portia's portrait?\par\vspace{3mm}
+        \begin{tikzpicture}[scale=0.8,font=\fontfamily{TrajanP}\selectfont]
+          \path[draw,line width=3mm,DarkGoldenrod1,fill overzoom image=images/wp7316403.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,DarkGoldenrod4] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill overzoom image=images/goldbrush.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=15pt\TrajanP 1. The \textbf{Portrait}\\\TrajanP is not in here.\\\medskip\TrajanP 2. The artist of\\\TrajanP the portrait is\\\TrajanP from Venice.\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,Snow2,fill overzoom image=images/SilverFoil.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,white] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill overzoom image=images/silverBg.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=12pt\TrajanP 1. The \textbf{Portrait}\\\TrajanP is not in the\\\TrajanP gold casket.\\\medskip\TrajanP 2. The artist of\\\TrajanP the portrait is\\\TrajanP from Florence.\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,SlateGray4,fill overzoom image=images/LeadBg.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,black] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill=Ivory3,opacity=0.3] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=15pt\TrajanP 1. The \textbf{Portrait}\\\TrajanP is not in here.\\\medskip\TrajanP 2. The portrait\\\TrajanP is in the\\\TrajanP silver casket.\par};
+        \end{tikzpicture}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Since we can trust Portia, on each lid, both statements can be true; one can be true and the other false; both statements cannot be false.\par
+        We proceed by cases: we assume the portrait is in each casket in turn. We eliminate the cases that give rise to impossible situations.\par
+        \underline{Case 1: The portrait is in the gold casket}\par
+        \hspace{1em}Gold: \;Statement 1 is false: Statement 2 is either true or false.\par
+        \hspace{1em}Silver: Statement 1 is false: Statement 2 is either false or true.\par
+        Of the two Statement 2's on the gold and silver boxes, at least one must be false which means that on one of these boxes there are two false statements, contradicting Portia. \par\medskip
+        \underline{Case 2: The portrait is in the silver casket}\par
+        \hspace{1em}Gold: \;Statement 1 is true: Statement 2 is either true or false.\par
+        \hspace{1em}Silver: Statement 1 is true: Statement 2 is either false or true.\par
+        \hspace{1em}Lead: \;Statement 1 is true: Statement 2 is true.\par
+        We have no inconsistency.\par\medskip
+        \underline{Case 3: The portrait is in the lead casket}\par
+        \hspace{1em}Gold: \;Statement 1 is false: Statement 2 is false.\par
+        Again, our assumption has led to a contradiction.\par\medskip
+        Case 2 did not arrive at a logical impossibility, so, the portrait is in the silver casket.\par\medskip
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

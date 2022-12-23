@@ -1,0 +1,67 @@
+      \begin{MyInnerSplitBox}{Year 9 and above}
+        Find the value of the shaded angle in the circle in the triangle in the semi-circle. You need to know some basic circle theorems for this.\par
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        We add some labels to help: \(I\) is the centre of the circle.\par
+        Since we are told the shape is a semi-circle, \(PQ\) is a diameter.\par
+        So the angle subtended by lines from \(P\) and \(Q\) to the circumference must be \(\SI{90}{\degree}\).\par
+        This is a special case of the theorem that says that the angle subtended at the centre of a circle (\(2\phi\)) by two points (\(A\) and \(B\)) on the circumference is double the angle the same two points subtend at the circumference (\(\phi\)). See the diagram below. In this case \(2\phi=\SI{180}{\degree}\) at the centre \(O\), so at the circumference (at \(R\)), the angle is half this.\par
+        That is, \(\angle PRQ = \SI{90}{\degree}\)\par
+        The circle inside \(\bigtriangleup PQR\) is called the 'incircle' of the triangle. The sides of the triangle \(PQR\) are tangent to the circle at \(L\), \(M\) and \(N\).\par
+        A radius of the circle meets a tangent line at right-angles, at the point of tangency.\par
+        That is, \(\angle IMR = \angle INR = \SI{90}{\degree}\).\par
+        Therefore \(\angle MIN = \SI{90}{\degree}\).\par
+        We use the same theorem again: Points \(M\) and \(N\) on the circumference of the circle subtend an angle of \(\SI{90}{\degree}\) at the centre \(I\) of the circle.\par
+        So the angle that points \(M\) and \(N\) subtend on the circumference of the circle at point \(L\) must be half that.\par
+        The value of the yellow-shaded angle is \(\SI{45}{\degree}\).
+      \end{MySolutionBox}
+    }{}%conditional output end
+        \tcblower
+        \begin{tikzpicture}[scale=1.1]
+          \def\Rad{3}
+          \coordinate (P) at (-\Rad,0);
+          \coordinate (R) at (60:\Rad);
+          \coordinate (Q) at (\Rad,0);
+          \tkzDefCircle[in](P,R,Q)\tkzGetPoint{I}\tkzGetLength{rI}
+          \draw (I) circle [radius=\rI];
+          \draw (P) -- (Q) node(xline) {} arc(0:180:\Rad) -- cycle;
+          \draw[line join=bevel] (P) -- (60:\Rad) coordinate (R) -- (Q);
+          \coordinate (M) at ($(R)!\rI cm!(P)$);
+          \coordinate (N) at ($(R)!\rI cm!(Q)$);
+          \path[] (I) -- (I |- xline) coordinate (L);
+          \markangle{L}{M}{N}{5mm}{6mm}{}{yellow}{1}{1}
+          \draw[blue,line join=bevel] (M) -- (N) -- (L) -- cycle;
+          \iftoggle{SOLUTION}{
+            \node[below left] at (P) {\(P\)};
+            \node[below right] at (Q) {\(Q\)};
+            \node[above] at (R) {\(R\)};
+            \node[below] (O) at (0,0) {\(O\)};
+            \node[below] at (L) {\(_L\)};
+            \node[right] at (N) {\(_N\)};
+            \node[above] at (M) {\(_M\)};
+            \node[below right=-1mm] at (I) {\(_I\)};
+            \draw[dashed] (M) -- (I) (N) -- (I) (L) -- (I);
+            \tkzMarkRightAngle[draw=red,fill=red,size=0.15](P,R,Q);
+            \tkzMarkRightAngle[draw=red,fill=red,size=0.15](R,M,I);
+            \tkzMarkRightAngle[draw=red,fill=red,size=0.15](I,N,R);
+            \tkzMarkRightAngle[draw=red,fill=red,size=0.15](M,I,N);
+            \draw[blue,line join=bevel] (M) -- (N) -- (L) -- cycle;
+            % \filldraw (I) circle (1pt);
+          }{}
+        \end{tikzpicture}\par\vspace{10mm}\hspace{3em}
+        \iftoggle{SOLUTION}{
+        \begin{tikzpicture}[scale=2.5]
+          \coordinate [label=above: $O$] (O) at (0,0);
+          \node[draw, name path=ci] (ci) at (O) [circle through=(right:1)]{};
+          \coordinate [label=below left: $C$] (P) at (ci.225);
+          \coordinate [label=below right: $B$] (Q) at (ci.290);
+          \draw[red,very thick,domain=225:290] plot({cos(\x)},{sin(\x)});
+          \coordinate [label=above: $A$] (A) at (ci.80);
+          \draw (P) -- (O) -- (Q);
+          \draw (P) -- (A) -- (Q);
+          \markangle{O}{P}{Q}{3mm}{4mm}{$2\phi$}{SkyBlue1}{0.5}{0.5};
+          \markangle{A}{P}{Q}{3mm}{4mm}{$\phi$}{SkyBlue1}{0.5}{0.5};
+      \end{tikzpicture}
+    }{}
+    \end{MyInnerSplitBox}
+

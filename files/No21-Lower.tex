@@ -1,0 +1,63 @@
+   \begin{MyInnerBox}{Year 8 and below}
+     A Pattern of squares. All six coloured areas are equal. What fraction is shaded?\par\medskip
+     \begin{tikzpicture}[scale=1]
+       \draw[thick] (0,0) coordinate (A) -- (3,0) coordinate (B) -- (3,3) coordinate (C) -- (0,3) coordinate (D) -- cycle;
+       \draw[thick,fill=SeaGreen2] (A) -- (0,1) -- (1,1) -- (1,0) -- cycle;
+       \draw[thick,fill=RoyalBlue2] (2,0) -- (B) -- (3,1) -- (2,1) -- cycle;
+       \draw[thick,fill=Yellow2] (2,2) -- (3,2) -- (C) -- (2,3) -- cycle;
+       \draw[thick,fill=PaleTurquoise1] (0,2) -- (1,2) -- (1,3) -- (D) -- cycle;
+       \draw[thick,fill=Orange1] (0.5,1.5) -- (1.5,0.5) -- (2.5,1.5) -- (1.5,2.5) -- cycle;
+       \draw[thick,fill=Tomato1] ({1-((sqrt(2)-1)/2)},1.5) -- (1.5,{1-((sqrt(2)-1)/2}) -- ({2+((sqrt(2)-1)/2)},1.5) -- (1.5,{2+((sqrt(2)-1)/2)}) -- cycle;
+       \iftoggle{SOLUTION}{
+         \node[above] at (D) {\(1\)};
+         \draw[blue,-{Triangle[width=10pt,length=7pt]}, line width=4pt] (3.1,1.5) -- (3.8,1.5);
+         \draw[thick,<-] ([shift=(30:0.3cm)]1.5,1.5) arc (30:300:0.3cm);
+     }{}
+     \end{tikzpicture}%
+     \iftoggle{SOLUTION}{
+     \begin{tikzpicture}[scale=1]
+       \draw[thick] (0,0) coordinate (A) -- (3,0) coordinate (B) -- (3,3) coordinate (C) -- (0,3) coordinate (D) -- cycle;
+       \draw[thick,fill=SeaGreen2] (A) -- (0,1) -- (1,1) -- (1,0) -- cycle;
+       \draw[thick,fill=RoyalBlue2] (2,0) -- (B) -- (3,1) -- (2,1) -- cycle;
+       \draw[thick,fill=Yellow2] (2,2) -- (3,2) -- (C) -- (2,3) -- cycle;
+       \draw[thick,fill=PaleTurquoise1] (0,2) -- (1,2) -- (1,3) -- (D) -- cycle;
+       \draw[thick,fill=Orange1] (0.5,1.5) -- (1.5,0.5) -- (2.5,1.5) -- (1.5,2.5) -- cycle;
+       \draw[thick,fill=Tomato1] (1,1) -- (2,1) -- (2,2) -- (1,2) -- cycle;
+       \draw[dotted] (1,1) -- (2,2) (2,1) -- (1,2);
+         \node[above] at (D) {\(2\)};
+         \draw[blue,-{Triangle[width=10pt,length=7pt]}, line width=4pt] (3.1,1.5) -- (3.8,1.5);
+     \end{tikzpicture}%
+     \begin{tikzpicture}[scale=1]
+       \draw[thick] (0,0) coordinate (A) -- (3,0) coordinate (B) -- (3,3) coordinate (C) -- (0,3) coordinate (D) -- cycle;
+       \draw[thick,fill=SeaGreen2] (A) -- (0,1) -- (1,1) -- (1,0) -- cycle;
+       \draw[thick,fill=RoyalBlue2] (2,0) -- (B) -- (3,1) -- (2,1) -- cycle;
+       \draw[thick,fill=Yellow2] (2,2) -- (3,2) -- (C) -- (2,3) -- cycle;
+       \draw[thick,fill=PaleTurquoise1] (0,2) -- (1,2) -- (1,3) -- (D) -- cycle;
+       \draw[thick,fill=Orange1] (1,0) -- (2,0) -- (2,1) -- (1,2) -- cycle;
+       \draw[thick,fill=Tomato1] (1,1) -- (2,1) -- (2,2) -- (1,2) -- cycle;
+         \node[above] at (D) {\(3\)};
+         \draw[blue,-{Triangle[width=10pt,length=7pt]}, line width=4pt] (3.1,1.5) -- (3.8,1.5);
+     \end{tikzpicture}%
+     \begin{tikzpicture}[scale=1]
+       \draw[thick] (0,0) coordinate (A) -- (3,0) coordinate (B) -- (3,3) coordinate (C) -- (0,3) coordinate (D) -- cycle;
+       \draw[thick,fill=SeaGreen2] (A) -- (0,1) -- (1,1) -- (1,0) -- cycle;
+       \draw[thick,fill=RoyalBlue2] (2,0) -- (B) -- (3,1) -- (2,1) -- cycle;
+       \draw[thick,fill=Yellow2] (2,1) -- (3,1) -- (3,2) -- (2,2) -- cycle;
+       \draw[thick,fill=PaleTurquoise1] (0,1) -- (1,1) -- (1,2) -- (0,2) -- cycle;
+       \draw[thick,fill=Orange1] (1,0) -- (2,0) -- (2,1) -- (1,2) -- cycle;
+       \draw[thick,fill=Tomato1] (1,1) -- (2,1) -- (2,2) -- (1,2) -- cycle;
+       \draw[thick] (1,3) -- (1,2) (2,3) -- (2,2);
+         \node[above] at (D) {\(4\)};
+     \end{tikzpicture}%
+     }{}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        See the diagrams above.\par
+        Since the red square has the same area as the orange area, we can rotate the red square as shown in the second diagram, and rearrange the orange area such that the orange triangles fit exactly into the red triangles indicated by the dotted diagonal lines.\par
+        We have shown that the width and height of the unshaded areas are the same as the width and height of the shaded squares.\par
+        So we can fill the bottom, middle square exactly with the orange triangles (Diagram 3).\par
+        Moving the cyan and yellow squares down (Diagram 4), we see that \(\frac{2}{3}\) of the diagram is shaded.\par
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

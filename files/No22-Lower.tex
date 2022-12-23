@@ -1,0 +1,27 @@
+   \begin{MyInnerBox}{Year 8 and below}
+     Insert the missing parentheses into each equation so that it becomes true when worked out according to the rules of order of operations (e.g. BIDMAS).
+     \LARGE{\begin{align*}
+       9 + 12 \div 3 + 4 \div 2 + 1\times 2 &= 2\\
+       9 + 12 \div 3 + 4 \div 2 + 1\times 2 &= 5\\
+       9 + 12 \div 3 + 4 \div 2 + 1\times 2 &= 8\\
+       9 + 12 \div 3 + 4 \div 2 + 1\times 2 &= 11\\
+       9 + 12 \div 3 + 4 \div 2 + 1\times 2 &= 12\\
+       9 + 12 \div 3 + 4 \div 2 + 1\times 2 &= 19
+   \end{align*}}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+     \Large{\begin{align*}
+       \shortintertext{First, with no brackets:}
+       9 + 12 \div 3 + 4 \div 2 + 1\times 2 &= 17\\
+       (9 + 12) \div (3 + 4) \div (2 + 1)\times 2 &= 2\\
+       (((9 + 12) \div (3 + 4) \div 2) + 1)\times 2 &= 5\\
+       (9 + 12) \div 3 + 4 \div (2 + 1\times 2) &= 8\\
+       (9 + 12) \div 3 + 4 \div 2 + 1\times 2 &= 11\\
+       9 + (12 \div 3 + 4) \div (2 + 1\times 2) &= 11\\
+       9 + 12 \div (3 + (4 \div (2 + 1\times 2))) &= 12\\
+       (((9 + (12 \div 3) + 4) \div 2) + 1)\times 2 &= 19
+   \end{align*}}
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

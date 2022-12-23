@@ -1,0 +1,49 @@
+   \begin{MyInnerBox}{Year 8 and below}
+     In Shakespeare's 'Merchant of Venice', Portia had three caskets - lead, silver and gold - inside one of which was Portia's portrait. Raymond Smullyan used this idea to write a series of logic puzzles, two of which you see here. To win the prize (one minute in the Total Perspective Vortex) you must say which casket holds the portrait. Portia tells you that, of the three statements on the caskets, at most one is true. Portia is truthful.\par\vspace{3mm}
+        \begin{tikzpicture}[scale=0.8,font=\fontfamily{TrajanP}\selectfont]
+          \path[draw,line width=3mm,DarkGoldenrod1,fill overzoom image=images/wp7316403.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,4.5) to[bend left=45] (6.5,5)-- (1.5,5) to[bend left=45] (1,4.5) -- cycle;
+          \path[draw,line width=0.5mm,DarkGoldenrod4] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,4.1) to[bend left=45] (6.1,4.6)-- (1.9,4.6) to[bend left=45] (1.4,4.1) -- cycle;
+          \path[fill overzoom image=images/goldbrush.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,4.0) -- (2.0,4.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,3.0) {\baselineskip=20pt\TrajanP The \textbf{Portrait} is\\\TrajanP in this casket\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,Snow2,fill overzoom image=images/SilverFoil.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,4.5) to[bend left=45] (6.5,5)-- (1.5,5) to[bend left=45] (1,4.5) -- cycle;
+          \path[draw,line width=0.5mm,white] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,4.1) to[bend left=45] (6.1,4.6)-- (1.9,4.6) to[bend left=45] (1.4,4.1) -- cycle;
+          \path[fill overzoom image=images/silverBg.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,4.0) -- (2.0,4.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,3.0) {\baselineskip=15pt\TrajanP The \textbf{Portrait} is\\\TrajanP not in\\\TrajanP this casket\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,SlateGray4,fill overzoom image=images/LeadBg.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,4.5) to[bend left=45] (6.5,5)-- (1.5,5) to[bend left=45] (1,4.5) -- cycle;
+          \path[draw,line width=0.5mm,black] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,4.1) to[bend left=45] (6.1,4.6)-- (1.9,4.6) to[bend left=45] (1.4,4.1) -- cycle;
+          \path[fill=Ivory3,opacity=0.3] (2.0,2.0) -- (6.0,2.0) -- (6.0,4.0) -- (2.0,4.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,3.0) {\baselineskip=15pt\TrajanP The \textbf{Portrait} is\\\TrajanP not in the\\\TrajanP gold casket\par};
+        \end{tikzpicture}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        We start off with the assumption that the question is correct, Portia is truthful, and therefore, it is true that exactly one of the statements is true, or, they are all false.\par
+        We then proceed by cases: we look at each possibility in turn. We eliminate the possibilities that give rise to impossible situations.\par
+        \underline{Case 1: All statements are false}\par
+        \hspace{1em}Gold: \;The statement on this casket is false: the portrait is not in the gold casket.\par
+        \hspace{1em}Silver: The statement is false: the portrait is in this casket.\par
+        \hspace{1em}Lead: \;The statement is false: the portrait is in the gold casket.\par
+        We have an inconsistency, this line of reasoning tells us the portrait is in two caskets at the same time, so we reject Case 1.\par\medskip
+        \underline{Case 2: The statement on the gold casket is true}\par
+        \hspace{1em}Gold: \;The statement is true: the portrait is in the gold casket.\par
+        \hspace{1em}Silver: The statement is false: the portrait is in the silver casket.\par
+        \hspace{1em}Lead: \;The statement is false: the portrait is in gold casket.\par
+        Again we have an inconsistency, we have found the portrait is in the silver and gold caskets at the same time, so we reject Case 1.\par\medskip
+        \underline{Case 3: The statement on the silver casket is true}\par
+        \hspace{1em}Gold: \;The statement is false: the portrait is not in the gold casket.\par
+        \hspace{1em}Silver: The statement is true: the portrait is not in the silver casket.\par
+        \hspace{1em}Lead: \;The statement is false: the portrait is in the gold casket.\par
+        Once again, our assumption has led to a contradiction, here the portrait is simultaneously in, and not in, the gold casket.\par\medskip
+        \underline{Case 4: The statement on the lead casket is true}\par
+        \hspace{1em}Gold: \;The statement is false: the portrait is not in the gold casket.\par
+        \hspace{1em}Silver: The statement is false: the portrait is in the silver casket.\par
+        \hspace{1em}Lead: \;The statement is true: the portrait is not in the gold casket.\par
+        This time, we did not arrive at a logical impossibility, so, the portrait is in the silver casket.\par\medskip
+        We have looked at a methodical path to our solution. We could also have noticed that the statements on the gold casket and the lead casket say the opposite, so one of them must be true. Since at most, one of the statements is true, the statement on the silver casket must be false. Therefore the portrait is in the silver casket.\par
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

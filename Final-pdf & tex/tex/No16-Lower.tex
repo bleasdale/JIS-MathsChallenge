@@ -1,0 +1,34 @@
+   \begin{MyInnerBox}{Year 8 and below}
+     \begin{tikzpicture}[scale=0.6]
+       \coordinate (A) at (0,0);
+       \coordinate (B) at (0,9);
+       \coordinate (C) at (0,11);
+       \coordinate (D) at ({19/3},11);
+       \coordinate (E) at (13,11);
+       \coordinate (F) at (13,2);
+       \coordinate (G) at ({19/3},2);
+       \coordinate (H) at ({19/3},0);
+       \coordinate (I) at ({19/3},9);
+       \draw[thick,fill=red] (A) -- (B) -- (I) -- (H) -- cycle;
+       \draw[thick,fill=yellow] (B) -- (I) -- (D) -- (C) -- cycle;
+       \draw[thick,fill=blue] (G) -- (F) -- (E) -- (D) -- cycle;
+       \draw[dashed,Stealth-Stealth] (0,11.5) -- (13,11.5) node[midway,inner sep=0mm,fill=white] {\(\SI{13}{\cm}\)};
+       \draw[dashed,Stealth-Stealth] (13.7,11) -- (13.7,2) node[midway,inner sep=0mm,fill=white] {\(\SI{9}{\cm}\)};
+       \draw[dashed,Stealth-Stealth] ({21/3},2) -- ({21/3},0) node[midway,inner sep=0mm,fill=white] {\(\SI{2}{\cm}\)};
+       \draw[dashed,Stealth-Stealth] (-0.5,9) -- (-0.5,11) node[midway,inner sep=0mm,fill=white] {\(?\SI{}{\cm}\)};
+       \node[white] at (3.2,4.5) {\(\SI{57}{\square\cm}\)};
+       \node[white] at (9.7,6.6) {\(\SI{60}{\square\cm}\)};
+     \end{tikzpicture}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        We know the height of the blue rectangle and its area, so we can work out its width.\par
+        Width of blue rectangle: \(\frac{60}{9} = \frac{20}{3}\)\par
+        So the width of the red and yellow rectangles must be \(13-\frac{20}{3}=\frac{19}{3}\)\par
+        As the area of the red rectangle is \(\SI{57}{\square\cm}\), its height must be:\par
+        \(57\div\frac{19}{3}=57\times\frac{3}{19}=9\)\par
+        Since the total height of the yellow and red rectangles is \(\SI{11}{\cm}\),\par
+        the yellow rectangle must be \(\SI{2}{\cm}\) high.
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

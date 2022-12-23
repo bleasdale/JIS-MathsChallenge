@@ -1,0 +1,36 @@
+   \begin{MyInnerBox}{Year 8 and below}
+      Write a ten-digit number so that the first digit tells how many zeros there are in the number, the second how many ones, the third how many twos, and so forth. \(1210\) is a four digit example, there is \(1\) zero, \(2\) ones, \(1\) two and \(0\) threes.
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Numbers that behave this way are called "self-descriptive" numbers.\par
+        Rather than trying out numbers at random, we start with a number and then correct it step by step to 'home in' on the solution. We start off trying nine zeroes and a one. Then we try correcting an error per line.\par
+        \begin{tabular}{l||c|c|c|c|c|c|c|c|c|c|l}
+          Digit & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ \hline
+          Try 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & Wrong, there are 9 zeroes, but the zero place says zero.\\
+          Try 1 & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & Wrong, now there's a nine but the nines place says zero.\\
+          Try 2 & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & Wrong, there are 8 zeroes.\\
+          Try 3 & 8 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & Wrong, there's a one.\\
+          Try 4 & 8 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & Wrong, there are 2 ones.\\
+          Try 5 & 8 & 2 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & Wrong, the ones and twos are right but there are 6 zeroes.\\
+          Try 6 & 6 & 2 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & Correct!
+        \end{tabular}\\
+        How about we try a different starting number? Sometimes we can alter a couple of numbers each iteration.\par
+        \begin{tabular}{l||c|c|c|c|c|c|c|c|c|c|l}
+          Digit & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ \hline
+          Try 0 & 1 & 2 & 3 & 4 & 5 & 1 & 2 & 3 & 4 & 5 & Wrong, there are no nines.\\
+          Try 1 & 1 & 2 & 3 & 4 & 5 & 1 & 2 & 3 & 4 & 0 & Wrong, there are no eights.\\
+          Try 2 & 2 & 2 & 3 & 4 & 5 & 1 & 2 & 3 & 0 & 0 & Wrong, there are no sevens.\\
+          Try 3 & 3 & 2 & 3 & 4 & 5 & 1 & 2 & 0 & 0 & 0 & Wrong, there are no sixes.\\
+          Try 4 & 4 & 2 & 3 & 4 & 5 & 1 & 0 & 0 & 0 & 0 & Wrong, there are 2 fours, not five.\\
+          Try 5 & 4 & 2 & 3 & 4 & 2 & 0 & 0 & 0 & 0 & 0 & Wrong, are \(0\) ones.\\
+          Try 6 & 4 & 0 & 3 & 4 & 2 & 0 & 0 & 0 & 0 & 0 & Wrong, there are 6 zeroes.\\
+          Try 7 & 6 & 0 & 3 & 4 & 1 & 0 & 0 & 0 & 0 & 0 & Wrong, there is 1 three.\\
+          Try 8 & 6 & 0 & 3 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & Wrong, there are 2 ones and no threes.\\
+          Try 9 & 6 & 2 & 3 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & Wrong, there's only 1 two.\\
+          Try 10 & 6 & 2 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & Correct!
+        \end{tabular}\\
+        Finally, we got to the same answer as before. In fact, you always end up with the same number, though sometimes you can end up in a repeating loop along the way.
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

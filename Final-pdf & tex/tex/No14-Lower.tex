@@ -1,0 +1,65 @@
+   \begin{MyInnerBox}{Year 8 and below}
+     \begin{minipage}[t]{0.4\linewidth}
+       \begin{tikzpicture}[scale=0.4]
+         \filldraw[black,fill=Firebrick1] (0,0) coordinate (A) -- (8,0) coordinate (B) -- (8,9) coordinate (C) -- (0,9) coordinate (D) -- cycle;
+         \filldraw[black,fill=Gold1] (8,2) coordinate (E) -- (12,2) coordinate (F) -- (12,9) coordinate (G) -- (C) -- cycle;
+         \filldraw[black,fill=DeepSkyBlue2] (C) -- (16,9) coordinate (H) -- (16,17) coordinate (I) -- (8,17) coordinate (J) -- cycle;
+         \filldraw[black,fill=Green3] (C) -- (8,14) coordinate (K) -- (2,14) coordinate (L) -- (2,9) coordinate (M) -- cycle;
+         \draw[dashed,Stealth-Stealth] (0,-0.5) -- (8,-0.5) node[midway,fill=white,inner sep=0pt] {\(\SI{8}{\cm}\)};
+         \draw[dashed,Stealth-Stealth] (0,9.5) -- (2,9.5) node[midway,above=1mm,inner sep=0pt] {\(\SI{2}{\cm}\)};
+         \draw[dashed,Stealth-Stealth] (12,8.5) -- (16,8.5) node[midway,fill=white,inner sep=0pt] {\(\SI{4}{\cm}\)};
+         \draw[dashed,Stealth-Stealth] (8.5,0) -- (8.5,2) node[midway,right=1.0mm,fill=white,inner sep=0pt] {\(\SI{2}{\cm}\)};
+         \draw[dashed,Stealth-Stealth] (7.5,14) -- (7.5,17) node[midway,left=1.0mm,fill=white,inner sep=0pt] {\(\SI{3}{\cm}\)};
+         \node (N) at (4,4.5) {\(?\)};
+         \node (O) at (5,11.5) {\(\SI{30}{\square\cm}\)};
+         \node (P) at (10,5.5) {\(\SI{28}{\square\cm}\)};
+         \node (Q) at (12,13) {\(\SI{64}{\square\cm}\)};
+       \end{tikzpicture}\par
+       Puzzle A
+     \end{minipage}%
+     \hfill
+     \begin{minipage}[t]{0.5\linewidth}
+       \hfill
+       \begin{tikzpicture}[scale=0.4]
+         \draw[black,fill=SlateBlue4] (0,0) coordinate (A) -- ({1+25/9},0) coordinate (B) -- ({1+25/9},9) coordinate (C) -- (0,9) coordinate (D) -- cycle;
+         \draw[black,fill=Plum1] (B) -- ({7+25/9},0) coordinate (E) -- ({7+25/9},6) coordinate (F) -- ({1+25/9},6) coordinate (G) -- cycle;
+         \draw[black,fill=OrangeRed4] (G) -- (F) -- ({7+25/9},9) coordinate (H) -- (C) -- cycle;
+         \draw[black,fill=Yellow1] (D) -- (H) -- ({7+25/9},18) coordinate (I) -- (0,18) -- cycle;
+         \draw[black,fill=Magenta3] (E) -- ({8+25/9+10/3},0) coordinate (J) -- ({8+25/9+10/3},6) coordinate (K) --(F) -- cycle;
+         \draw[black,fill=OliveDrab1] (F) -- (K) -- ({8+25/9+10/3},18) coordinate (L) -- (I) -- cycle;
+         \node[white] (M) at (1.8,3.5) {\(?\)};
+         \node[] (N) at (6.8,3.5) {\(\SI{30}{\square\cm}\)};
+         \node[white] (O) at (12,3.5) {\(\SI{20}{\square\cm}\)};
+         \node[white] (P) at (6.8,7.5) {\(\SI{15}{\square\cm}\)};
+         \node[] (Q) at (4.7,13.5) {\(\SI{70}{\square\cm}\)};
+         \node[] (R) at (12,13.5) {\(\SI{40}{\square\cm}\)};
+         \iftoggle{SOLUTION}{
+           \node[white] (S) at (9.4,7.5) {\(b\)};
+           \node[] (T) at (9.2,3.5) {\(2b\)};
+           \node[] (U) at (14.7,3.5) {\(2b\)};
+           \node[] (V) at (14.7,13.5) {\(4b\)};
+         }{}
+       \end{tikzpicture}\par
+       Puzzle B\par
+     \end{minipage}\par\medskip
+     Two puzzles! Remember you have to show how you got the answer. You cannot justify your answer by saying "Because it looks that way!" Have fun!\par
+     \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Puzzle A\par
+        First we can see that the green-red boundary must be \(8-2=\SI{6}{\cm}\).\par
+        Then, since the green rectangle is \(\SI{30}{\square\cm}\), the green-blue boundary has to be \(\SI{5}{\cm}\)\par
+        Then, the height of the blue rectangle is \(\SI{8}{\cm}\) and so its width must be \(\SI{8}{\cm}\) too.\par
+        Now, the width of the yellow rectangle must be \(8-4=\SI{4}{\cm}\) and so its height must be \(\SI{7}{\cm}\).\par
+        From this we get the height of the red rectangle is \(7+2=\SI{9}{\cm}\).\par
+        So the area of the red rectangle is \(8\times 9 = \SI{72}{\square\cm}\).\par\smallskip
+        Puzzle B\par
+        It is tempting to say the height of the pink rectangle plus the height of the dark red rectangle is the same as the yellow rectangle, which makes the unknown rectangle's area easy to find. But if that is true, we must \underline{show} it to be true.\par
+        We let the height of the dark red rectangle be \(b\).\par
+        Then the height of the pink rectangle must be \(2b\) as it has the same width but is double the area of the dark red rectangle.\par
+        Now label the height of the purple rectangle \(2b\) as it is the same height as the pink rectangle, and the height of the light green rectangle \(2d\) as it has the same width as the purple rectangle but is double the area.\par
+        But now we have shown that the height of the yellow rectangle is \(3b\), that is, we know that the yellow rectangle has the same area as the dark blue, dark red and pink rectangles put together.\par
+        Therefore the area of the dark blue rectangle must be \(70-(15+30)=\SI{25}{\square\cm}\).\par
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

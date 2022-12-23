@@ -1,0 +1,37 @@
+   \begin{MyInnerBox}{For all Years}
+     It's
+      \begin{center}
+        \Huge{2023!}\normalsize\par
+      \end{center}
+      Use the digits \(2\), \(0\), \(2\) and \(3\) and any operations you know (or discover!) to obtain all the whole numbers from \(0\) to at least \(20\). You can use \(+\), \(-\), \(\times\) and \(\div\). You can use powers, for example, \(2^{3}\). You can also use concatenation, which is the fancy word for sticking two digits together. For example, you can use the \(2\) and the \(0\) to make \(20\). We can write this as \(2\oplus 0=20\). Another example, \(2\oplus(0!)=2\oplus 1=21\).\par
+      The factorial operator is very useful: \(n!\) means \(n\times (n-1)\times (n-2)\times\dots\times 4\times 3\times 2\times 1\). So for example, \(4! = 4\times 3\times 2\times 1 = 24\). Note that \(0!=1\) by definition.\par
+      You get a point for every number you can make using the four digits of the year exactly once.  If you can use them in the same order as the year, you get two points.\par
+      For example, if your target was \(25\):\par
+      \hspace{2em}\(25 = 22 + 3 + 0\)  gives one point, but\par
+      \hspace{2em}\(25 = 20 + 2 +3\)   gives two points.
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Here are some solutions, there could be several possible answers for some numbers.\par
+        \(n\#\) is a bit like \(n!\), it means multiply all the prime numbers less than or equal to \(n\) together. So \(6\# = 5\# = 5\times 3 \times 2 = 30\).\par\medskip
+        \begin{tabular}{l | l}
+          \(0=2\times 0\times 2\times3\) & \(16=20+2-3!=(2+0)\times2^{3}\)\\
+          \(1=2+0+2-3=(2+0)\times2-3\) & \(17=2\oplus(0!) + 2-3!\)\\
+          \(2=3-(2\div 2)+0 = (-2+0)\div 2 +3\) & \(18=(2+0)\times 3^{2}=(2+0!)\times 2\times 3\)\\
+          \(3=((2+0)\div 2)\times3 = -(20-23)\) & \(19=20+2-3\)\\
+          \(4=-2+0+2\times 3\) & \(20=20\times(-2+3)\)\\
+          \(5=-((2+0)\div 2)+3!\) & \(21=20-2+3=(2+0+2)!-3\)\\
+          \(6=(2\times 0)+(2\times 3)\) & \(22=22+3\times0=-(2-0!)+23\)\\
+          \(7=(2+0)\times 2 + 3=2+0+2+3\) & \(23=2\times 0+23\)\\
+          \(8=(2+0+2)!\div 3=2+0!+2+3\) & \(24=(-2+0+2\times 3)!=(2+0!-2+3)!\)\\
+          \(9=(2+0!)!\times 2-3\) & \(25=(2+0!)!\#-2-3\)\\
+          \(10=(2+0!)!-2+3!\) & \(26=20+2\times 3\)\\
+          \(11=(2+0!)!+2+3\) & \(27=2\oplus(0!)+2\times 3=(2+0+2)!+3\)\\
+          \(12=(2+0+2)\times 3 = 20-2-3!\) & \(28=20+2^{3}\)\\
+          \(13=2\oplus(0!)-(2+3!)\) & \(29=20+3^{2}=2\oplus(0!)+2^{3}\)\\
+          \(14=20-(2\times 3)\) & \(30=2-2+30=(2+0!)!\#\times(-2+3)\)\\
+          \(15= (2+0!)!\times 2 + 3\) & \(\quad\; = 20\div 2 \times 3\)\\
+        \end{tabular}
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

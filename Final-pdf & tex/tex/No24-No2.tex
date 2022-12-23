@@ -1,0 +1,30 @@
+      \begin{MyInnerBox}{All years, question 2}
+        In this test, Portia places a portrait of herself in one of only two caskets, there are no daggers. As in the first puzzle, each casket is made by either Cellini or Bellini.\par
+        Which casket holds Portia's portrait?\par\vspace{3mm}
+        \begin{tikzpicture}[scale=0.8,font=\fontfamily{TrajanP}\selectfont]
+          \path[draw,line width=3mm,DarkGoldenrod1,fill overzoom image=images/wp7316403.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,DarkGoldenrod4] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill overzoom image=images/goldbrush.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=15pt\TrajanP The \textbf{Portrait} \\\TrajanP is not in this\\\TrajanP casket.\par};
+        \end{tikzpicture}\hspace{2mm}
+        \begin{tikzpicture}[scale=0.8]
+          \path[draw,line width=3mm,Snow2,fill overzoom image=images/SilverFoil.jpg] (1,1.5) to[bend left=45] (1.5,1) -- (6.5,1) to[bend left=45] (7,1.5) -- (7,6.5) to[bend left=45] (6.5,7)-- (1.5,7) to[bend left=45] (1,6.5) -- cycle;
+          \path[draw,line width=0.5mm,white] (1.4,1.9) to[bend left=45] (1.9,1.4) -- (6.1,1.4) to[bend left=45] (6.6,1.9) -- (6.6,6.1) to[bend left=45] (6.1,6.6)-- (1.9,6.6) to[bend left=45] (1.4,6.1) -- cycle;
+          \path[fill overzoom image=images/silverBg.jpg] (2.0,2.0) -- (6.0,2.0) -- (6.0,6.0) -- (2.0,6.0) -- cycle;
+          \node[black,align=center,text width=4cm] at (4,4.2) {\baselineskip=15pt\TrajanP Exactly one \\\TrajanP of these two \\\TrajanP caskets was\\\TrajanP fashioned by\\\TrajanP Bellini.\par};
+        \end{tikzpicture}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Again, we will assume that one of the caskets is made by Bellini, and again we will begin with the casket that looks like it will provide more information. In this case, the silver one.\par
+        \underline{Case 1: The silver casket was made by Bellini}\par
+        \hspace{1em} The silver box has a true statement as it was made by Bellini. From this silver statement, the gold casket must have been made by Cellini.\par
+        \hspace{1em} The statement on the gold box is false, so the portrait is inside.\par
+        We could just stop here, we have found a logically consistent answer, and if the problem is well-formed, the other case should lead to the same conclusion.\par\medskip
+        \underline{Case 2: The silver casket was made by Cellini}\par
+        \hspace{1em} The statement on the silver box is false, so both caskets were made by Cellini.\par
+        \hspace{1em} The statement on the gold box is false, so the portrait is inside.\par
+        This case leads to the same conclusion, the portrait is in the gold casket.\par\medskip
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

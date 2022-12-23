@@ -1,0 +1,167 @@
+% !TEX program = xelatex
+\documentclass[a4paper]{article}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage[x11names]{xcolor}
+\usepackage{xparse}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setromanfont{DovesType-Regular.otf}
+\setsansfont{Andika}
+\setmathfont{Asana Math}[Scale=1]
+
+% \usepackage{pstricks}
+\usepackage{varwidth}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage[margin=1cm]{geometry}
+\usepackage[most]{tcolorbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\tcbuselibrary{skins,xparse,poster,breakable}
+% \usetikzlibrary{fadings}
+\usetikzlibrary{calc, plotmarks, shapes, shapes.geometric, positioning, angles, intersections, quotes, through, patterns, turtle, arrows.meta}
+\usetikzlibrary{decorations.markings}
+% \usepackage{etoolbox}
+\usepackage{tkz-euclide}
+% \usepackage{xlop}
+% \newcommand\hole[2]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\markangle[9]{% origin X Y radius radiusmark mark colour opacity
+%  % fill red circle offset-from-centre
+  \begin{scope}
+    \path[clip] (#1) -- (#2) -- (#3);
+    \fill[color=#7,fill opacity=#8,draw=black,name path global=pcircle]  % global declaration required otherwise pcircle is not seen by the `named intersections=' lines below.
+    (#1) circle (#4);
+  \end{scope}
+  % middle calculation
+  \path[name path=line one] (#1) -- (#2);
+  \path[name path=line two] (#1) -- (#3);
+  \path[%
+  name intersections={of=line one and pcircle, by={inter one}},
+  name intersections={of=line two and pcircle, by={inter two}}
+  ] (inter one) -- (inter two) coordinate[pos=#9] (place);
+  % put mark
+  \node at ($(#1)!#5!(place)$) {\scriptsize{#6}};
+}
+
+% \newcommand{\condSoln}[2]{\ifcsdef{r@#1}{#2}{}}
+
+% \newcommand\fadingtext[3][]{%
+%    \begin{tikzfadingfrompicture}[name=fading letter]
+%      \node[text=transparent!0,inner xsep=0pt,outer xsep=0pt,#1] {#3};
+%    \end{tikzfadingfrompicture}%
+%    \begin{tikzpicture}[baseline=(textnode.base)]
+%      \node[inner sep=0pt,outer sep=0pt,#1](textnode){\phantom{#3}};
+%      \shade[path fading=fading letter,#2,fit fading=false]
+%      (textnode.south west) rectangle (textnode.north east);%
+%    \end{tikzpicture}%
+% }
+
+\definecolor{JISpurple}{RGB}{89,72,122}
+\definecolor{JISivory}{RGB}{241,234,221}
+\definecolor{JIStaupe}{RGB}{183,156,154}
+\definecolor{PaleGreen}{RGB}{240,255,240} % 'Honeydew'
+
+\AddToHook{shipout/background}{%
+    \put (0in,-\paperheight){\includegraphics[width=\paperwidth,height=\paperheight]{images/R10V5-R.png}}%
+}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\newtcolorbox{MyOuterBox}{%
+  enhanced,
+  breakable,
+  frame style=JISpurple,
+  colback=JISivory,
+  colframe=JISpurple,
+  title={\includegraphics[width=0.9cm,height=0.9cm]{images/JIS Final Logo FA-02.png}\raisebox{3mm}{\Large{Maths Challenge}\hspace{26em} \Large{\bfseries\sffamily 8}}},
+}
+
+\newtcolorbox{MyInnerBox}[2][]{enhanced,%empty,
+coltitle=JISpurple,colback=white,
+fonttitle=\bfseries\sffamily,
+attach boxed title to top left={yshift=-1.5mm},
+boxed title style={empty, size=small, top=1mm, bottom=0pt},
+varwidth boxed title=0.5\linewidth,
+frame code={
+  \path (title.east|-frame.north) coordinate (aux);
+\path[draw=JISpurple, line width=0.5mm, rounded corners,fill=white]
+(frame.west) |- ([xshift=-2.5mm]title.north east) to[out=0, in=180] ([xshift=7.5mm]aux)-|(frame.east)|-(frame.south)-|cycle;
+},
+title={#2},#1}
+
+\newtcolorbox{MyInnerSplitBox}[2][]{enhanced,%empty,
+bicolor,sidebyside,sidebyside align=top seam,
+righthand width=5.0cm,colbacklower=white,
+coltitle=JISpurple,colback=white,
+fonttitle=\bfseries\sffamily,
+attach boxed title to top left={yshift=-1.5mm},
+boxed title style={empty, size=small, top=1mm, bottom=0pt},
+varwidth boxed title=0.5\linewidth,
+frame code={
+  \path (title.east|-frame.north) coordinate (aux);
+\path[draw=JISpurple, line width=0.5mm, rounded corners,fill=white]
+(frame.west) |- ([xshift=-2.5mm]title.north east) to[out=0, in=180] ([xshift=7.5mm]aux)-|(frame.east)|-(frame.south)-|cycle;
+},
+title={#2},#1}
+
+\newtcolorbox{MyInnerSplitBoxLower}[2][]{enhanced,%empty,
+bicolor,sidebyside,sidebyside align=top seam,
+righthand width=9.0cm,colbacklower=white,
+coltitle=JISpurple,colback=white,
+fonttitle=\bfseries\sffamily,
+attach boxed title to top left={yshift=-1.5mm},
+boxed title style={empty, size=small, top=1mm, bottom=0pt},
+varwidth boxed title=0.5\linewidth,
+frame code={
+  \path (title.east|-frame.north) coordinate (aux);
+\path[draw=JISpurple, line width=0.5mm, rounded corners,fill=white]
+(frame.west) |- ([xshift=-2.5mm]title.north east) to[out=0, in=180] ([xshift=7.5mm]aux)-|(frame.east)|-(frame.south)-|cycle;
+},
+title={#2},#1}
+
+\newtcolorbox{MySolutionBox}{%
+  enhanced,
+  breakable,
+  frame style=JISpurple,
+  colback=PaleGreen, colframe=green,
+  title={\Large Solution},
+  drop fuzzy shadow,
+  halign=left,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtoggle{SOLUTION}
+%%% Uncomment the appropriate line below to show solutions %%%
+% \toggletrue{SOLUTION}
+\togglefalse{SOLUTION}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%            DOCUMENT BEGINS           %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+  \begin{MyOuterBox}
+    \iftoggle{SOLUTION}{Here are the full, or partial solutions.
+    }{
+      Welcome to this week's Maths Challenge!\\
+      Solutions must be explained in detail, responses with just the answer may be ignored.\\
+      Drop your solution in the box in the staffroom by Tuesday.
+    }
+    \input{files/No8-Lower.tex}
+    \vspace{0.4cm}
+    \input{files/No8-Upper.tex}
+  \end{MyOuterBox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+

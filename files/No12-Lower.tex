@@ -1,0 +1,24 @@
+   \begin{MyInnerBox}{Year 8 and below}
+     You have \SI{10}{\litre} of nard oil in a \SI{10}{\litre} alabaster jar, which you need to divide into two equal volumes. You have an empty \SI{7}{\litre} jar and an empty \SI{3}{\litre} jar. Using only the jars, measure out two jars of \SI{5}{\litre} each.
+     (This puzzle first appeared in a book in Japan in 1631.)\par
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Let's set up our three jars with the starting conditions at Step \(0\):\par
+        \begin{tabular}{c|c|c|c|l}
+            Step & \SI{10}{\litre} jar & \SI{7}{\litre} jar & \SI{3}{\litre} jar\\\hline
+            \(0\) & \(10\) & \(0\) & \(0\)\\
+            \(1\) & \(3\) & \(7\) & \(0\) & Fill the \SI{7}{\litre} jar from the \SI{10}{\litre} jar\\
+            \(2\) & \(3\) & \(4\) & \(3\) & Fill the \SI{3}{\litre} jar from the \SI{7}{\litre} jar\\
+            \(3\) & \(6\) & \(4\) & \(0\) & Pour the \SI{3}{\litre} jar into the \SI{10}{\litre} jar\\
+            \(4\) & \(6\) & \(1\) & \(3\) & \(\vdots\)\\
+            \(5\) & \(9\) & \(1\) & \(0\)\\
+            \(6\) & \(9\) & \(0\) & \(1\)\\
+            \(7\) & \(2\) & \(7\) & \(1\)\\
+            \(8\) & \(2\) & \(5\) & \(3\)\\
+            \(9\) & \(5\) & \(5\) & \(0\)\\
+          \end{tabular}\par\vspace{2mm}
+        Now we have divided the \SI{10}{\litre}, \SI{5}{\litre} in the \SI{10}{\litre} jar, and \SI{5}{\litre} in the \SI{7}{\litre} jar.
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

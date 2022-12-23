@@ -1,0 +1,24 @@
+   \begin{MyInnerBox}{Year 8 and below}
+      Thirty-one people took an exam and each person achieved a different, whole number score, from \(70\) to \(100\). The average of the scores is calculated. Then one person's score is removed, but when the average is recalculated, it has not changed, the new mean is the same as the mean of the original \(31\) marks. Which score was taken out?
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        It might be easier to start with an example containing easier numbers. Suppose we have five examinees and their scores are 1, 2, 3, 4, 5.\par
+        The sum of the scores is 15 and the mean is \(\frac{15}{5}=3\).\par
+        If we take out the middle score, 3, the new sum of scores is 12 and the new mean is \(\frac{13}{4}=3\), the mean did not change when we removed the middle value.\par
+        Notice also that if we find the sum by adding in pairs, \(1+5 = 6\), then \(2+4=6\) until the middle value is left, the total is the same each time, there is a kind of symmetry around the middle value.\par
+        Now if we start with the problem given, we can add up the thirty-one scores in pairs: \(70+100=170\), then \(71+99=170\), then \(72+98=170\) and so on until we reach \(84+86=170\), that's fifteen pairs, leaving \(85\) as the middle number.\par
+        The average of the thirty-one scores:
+        \begin{align*}
+          \frac{(170\times 15)+85}{31} &= 85\\
+          (170\times 15) + 85 &= 31 \times 85\\
+          (170\times 15) + 85 &= 30 \times 85 + 85\\
+          170\times 15 &= 30\times 85
+          \shortintertext{The average of the thirty scores after removing the middle value, \(85\):}
+          \frac{170\times 15}{30} &= 85
+        \end{align*}
+      The averages are the same.\par
+        \(85\) was the score removed.
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

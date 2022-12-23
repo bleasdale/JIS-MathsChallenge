@@ -1,0 +1,131 @@
+      \begin{MyInnerBox}{Year 9 and above}
+        You have a four-digit, positive integer. Now you remove one of the four digits. The three digits that are left, in their original order from the four digit number, make a three-digit number. The sum of the four-digit number and the three-digit number is \(6031\). What is the four-digit number?\par
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        We'll begin by describing the four-digit number as \(abcd\). The three digit number could be \(bcd\), removing the \(a\), \(acd\), removing the \(b\), \(abd\), or \(abc\). The additions for each of these cases look like:\par
+        \underline{Case 1: a removed}\qquad\quad\underline{Case 2: b removed}\quad\qquad\underline{Case 3: c removed}\qquad\quad\underline{Case 4: d removed}\par
+        \noindent\ttfamily
+        \opadd[voperator=bottom,carryadd=false,operandstyle.1.1=\hole{d},
+        operandstyle.1.2=\hole{c},
+        operandstyle.1.3=\hole{b},
+        operandstyle.1.4=\hole{a},
+        operandstyle.2.1=\hole{d},
+        operandstyle.2.2=\hole{c},
+        operandstyle.2.3=\hole{b}]{5483}{548}\qquad\qquad\qquad
+        \opadd[voperator=bottom,carryadd=false,operandstyle.1.1=\hole{d},
+        operandstyle.1.2=\hole{c},
+        operandstyle.1.3=\hole{b},
+        operandstyle.1.4=\hole{a},
+        operandstyle.2.1=\hole{d},
+        operandstyle.2.2=\hole{c},
+        operandstyle.2.3=\hole{a}]{5483}{548}\qquad\qquad\qquad
+        \opadd[voperator=bottom,carryadd=false,operandstyle.1.1=\hole{d},
+        operandstyle.1.2=\hole{c},
+        operandstyle.1.3=\hole{b},
+        operandstyle.1.4=\hole{a},
+        operandstyle.2.1=\hole{d},
+        operandstyle.2.2=\hole{b},
+        operandstyle.2.3=\hole{a}]{5483}{548}\qquad\qquad\qquad
+        \opadd[voperator=bottom,carryadd=false,operandstyle.1.1=\hole{d},
+        operandstyle.1.2=\hole{c},
+        operandstyle.1.3=\hole{b},
+        operandstyle.1.4=\hole{a},
+        operandstyle.2.1=\hole{c},
+        operandstyle.2.2=\hole{b},
+        operandstyle.2.3=\hole{a}]{5483}{548}\qquad\par
+        \normalfont
+        But notice that in the first three cases, the answer has a \(1\) in the units place, each obtained from \(d+d\). This is not possible, \(2d\) must be even, so the three-digit number must be \(abc\) as in the fourth case.\par
+        Now, let's think about the value of \(a\). It could be \(6\), (no carry from the hundreds column), or it could be \(5\), (carry \(1\) from the hundreds colum.\par
+        \underline{Case 1: \(a=6\)}\qquad\:   \underline{Case 2: \(a=5\)}\par
+        \ttfamily
+        \opadd[voperator=bottom,carryadd=false,
+        operandstyle.1.1=\hole{d},
+        operandstyle.1.2=\hole{c},
+        operandstyle.1.3=\hole{b},
+        operandstyle.1.4=\hole{6},
+        operandstyle.2.1=\hole{c},
+        operandstyle.2.2=\hole{b},
+        operandstyle.2.3=\hole{6}]{5483}{548}\qquad\qquad
+        \opadd[voperator=bottom,carryadd=true,
+        carrystyle.4=\scriptsize\blue,
+        carrystyle.3=\scriptsize\hole{},
+        carrystyle.2=\scriptsize\hole{},
+        operandstyle.1.1=\hole{d},
+        operandstyle.1.2=\hole{c},
+        operandstyle.1.3=\hole{b},
+        operandstyle.1.4=\hole{5},
+        operandstyle.2.1=\hole{c},
+        operandstyle.2.2=\hole{b},
+        operandstyle.2.3=\hole{5}]{5483}{548}\par
+        \normalfont
+        We can see that \(a=6\) will not work; if there is no carry, what value of \(b\) plus \(6\) can give zero in the hundreds place? None. So the case \(a=5\) must be correct. So now looking at Case 2, we must find the value of \(b\) such that \(b+5=10\), giving a \(0\) in the hundreds' answer column. So now we have two cases again, \(b=5\) (with no carry from the tens column), or \(b=4\) with \(1\) carried from the tens column:\par
+        \underline{Case 1: \(b=5\)}\qquad\:   \underline{Case 2: \(b=4\)}\par
+        \ttfamily
+        \opadd[voperator=bottom,carryadd=true,
+        carrystyle.4=\scriptsize\blue,
+        carrystyle.3=\scriptsize\hole{},
+        carrystyle.2=\scriptsize\hole{},
+        operandstyle.1.1=\hole{d},
+        operandstyle.1.2=\hole{c},
+        operandstyle.1.3=\hole{5},
+        operandstyle.1.4=\hole{5},
+        operandstyle.2.1=\hole{c},
+        operandstyle.2.2=\hole{5},
+        operandstyle.2.3=\hole{5}]{5483}{548}\qquad\qquad
+        \opadd[voperator=bottom,carryadd=true,
+        carrystyle.4=\scriptsize\blue,
+        carrystyle.3=\scriptsize\blue,
+        carrystyle.2=\scriptsize\hole{},
+        operandstyle.1.1=\hole{d},
+        operandstyle.1.2=\hole{c},
+        operandstyle.1.3=\hole{4},
+        operandstyle.1.4=\hole{5},
+        operandstyle.2.1=\hole{c},
+        operandstyle.2.2=\hole{4},
+        operandstyle.2.3=\hole{5}]{5483}{548}\par
+        \normalfont
+        In Case 1, in the tens column we must have \(c+5=3\), and yet there can be no carry. This is not possible so Case 1 is wrong, Case 2 is correct. So \(b=4\), and we must find \(c+4=3\). So \(c\) could be \(9\) with no carry from the ones column or \(c\) could be \(8\) with a carry from the ones column:\par
+        \underline{Case 1: \(c=9\)}\qquad\:   \underline{Case 2: \(c=8\)}\par
+        \ttfamily
+        \opadd[voperator=bottom,carryadd=true,
+        carrystyle.4=\scriptsize\blue,
+        carrystyle.3=\scriptsize\blue,
+        carrystyle.2=\scriptsize\hole{},
+        operandstyle.1.1=\hole{d},
+        operandstyle.1.2=\hole{9},
+        operandstyle.1.3=\hole{4},
+        operandstyle.1.4=\hole{5},
+        operandstyle.2.1=\hole{9},
+        operandstyle.2.2=\hole{4},
+        operandstyle.2.3=\hole{5}]{5483}{548}\qquad\qquad
+        \opadd[voperator=bottom,carryadd=true,
+        carrystyle.4=\scriptsize\blue,
+        carrystyle.3=\scriptsize\blue,
+        carrystyle.2=\scriptsize\blue,
+        operandstyle.1.1=\hole{d},
+        operandstyle.1.2=\hole{8},
+        operandstyle.1.3=\hole{4},
+        operandstyle.1.4=\hole{5},
+        operandstyle.2.1=\hole{8},
+        operandstyle.2.2=\hole{4},
+        operandstyle.2.3=\hole{5}]{5483}{548}\par
+        \normalfont
+        Nearly there! If \(c=9\) then in the ones column we would have \(d+9=1\) which means that \(d=2\) and there must be a carry, but Case 1 has no carry to the tens place so Case 1 is impossible. Therefore Case 2 with \(c=8\) must be true. But if \(c=8\) and we do have a carry to the tens column, then \(d\) has to be \(3\).\par
+        \ttfamily
+        \opadd[voperator=bottom,carryadd=true,
+        carrystyle.4=\scriptsize\blue,
+        carrystyle.3=\scriptsize\blue,
+        carrystyle.2=\scriptsize\blue,
+        operandstyle.1.1=\hole{3},
+        operandstyle.1.2=\hole{8},
+        operandstyle.1.3=\hole{4},
+        operandstyle.1.4=\hole{5},
+        operandstyle.2.1=\hole{8},
+        operandstyle.2.2=\hole{4},
+        operandstyle.2.3=\hole{5}]{5483}{548}\par
+        \normalfont
+        The four digit number is \(5483\).
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

@@ -1,0 +1,47 @@
+   \begin{MyInnerBox}{Year 8 and below}
+     You have two, identical timer-sticks. Each stick takes exactly 60 minutes to burn along its whole length. The sticks burn non-uniformly: for example, one half of the length of a stick might burn in 15 minutes while the other half takes 45 minutes. You have a lighter to ignite the sticks.\par
+        \begin{tikzpicture}[scale=1]
+          \draw[line width=4mm,Tan3] (0,2) node[left,black] {Ignite at end}-- (6,2);
+          \draw[dashed,->] (0,1.6)  -- (6,1.6) node[midway,inner sep=0mm,fill=PaleGreen] {\(\SI{60}{minutes}\) to burn};
+          \node[star,star points=7,star point ratio=-0.7,fill=yellow,minimum width=0.5cm] at (0,2) {};
+          \node[star,star points=5,star point ratio=-0.5,fill=red,minimum width=0.3cm] at (0,2) {};
+        \end{tikzpicture}\par\medskip
+     How can you measure out 45 minutes?\par
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        If we light one of the sticks at both ends, it will take half the original time, that is, 30 minutes, to burn completely. Notice that this is true even though the rate of burning along the stick is not uniform, this just means that the point where the two burning points meet may not be in the middle of the stick.\par
+        So, we light one of the sticks, Stick 1, at both ends, and we light the other stick, Stick 2, at one end.\par\medskip
+        \begin{tikzpicture}[scale=1]
+          \draw[line width=4mm,Tan3] (0,3) node[left,black] {Stick 1} -- (6,3);
+          \draw[dashed,<->] (0,2.6) -- (6,2.6) node[midway,inner sep=0mm,fill=PaleGreen] {\(\SI{30}{minutes}\)};
+          \draw[line width=4mm,Tan3] (0,2) node[left,black] {Stick 2 }-- (6,2);
+          \draw[dashed,<->] (0,1.6)  -- (6,1.6) node[midway,inner sep=0mm,fill=PaleGreen] {\(\SI{60}{minutes}\)};
+          \node[star,star points=7,star point ratio=-0.7,fill=yellow,minimum width=0.5cm] at (0,3) {};
+          \node[star,star points=5,star point ratio=-0.5,fill=red,minimum width=0.3cm] at (0,3) {};
+          \node[star,star points=7,star point ratio=-0.7,fill=yellow,minimum width=0.5cm] at (6,3) {};
+          \node[star,star points=5,star point ratio=-0.5,fill=red,minimum width=0.3cm] at (6,3) {};
+          \node[star,star points=7,star point ratio=-0.7,fill=yellow,minimum width=0.5cm] at (0,2) {};
+          \node[star,star points=5,star point ratio=-0.5,fill=red,minimum width=0.3cm] at (0,2) {};
+        \end{tikzpicture}\par\medskip
+        Thirty minutes later, Stick 1 finishes burning, and thirty minutes burning time is left on Stick 2.\par
+        As soon as Stick 1 completes, we light the other end of Stick 2. With one end burning there were thirty minutes left, but with both ends burning, Stick 2 only has \(\SI{15}{\minute}\) of burning time left.\par
+        So when Stick 2 is completely burned, \(45\) minutes will have elapsed.\par\medskip
+        \begin{tikzpicture}[scale=1]
+          \draw[line width=4mm,Sienna4] (0,3) node[left,black] {Stick 1} -- (6,3);
+          \draw[dashed,<->] (0,2.6) -- (4.5,2.6) node[midway,inner sep=0mm,fill=PaleGreen] {\(\SI{30}{min}\)};
+          \draw[dashed,<->] (4.5,2.6) -- (6,2.6) node[midway,inner sep=0mm,fill=PaleGreen] {\(\SI{30}{min}\)};
+          \draw[line width=4mm,Sienna4] (0,2) node[left,black] {Stick 2}-- (2.5,2);
+          \draw[line width=4mm,Tan3] (2.5,2) -- (6,2);
+          \draw[dashed,<->] (0,1.6)  -- (2.5,1.6) node[midway,inner sep=0mm,fill=PaleGreen] {\(\SI{30}{min}\)};
+          \draw[dashed,<->] (2.5,1.6)  -- (6,1.6) node[midway,inner sep=0mm,fill=PaleGreen] {\(\SI{15}{min}\)};
+          \node[star,star points=7,star point ratio=-0.4,fill=yellow,minimum width=0.2cm] at (4.5,3) {};
+          \node[star,star points=5,star point ratio=-0.4,fill=red,minimum width=0.2cm] at (4.5,3) {};
+          \node[star,star points=7,star point ratio=-0.7,fill=yellow,minimum width=0.5cm] at (6,2) {};
+          \node[star,star points=5,star point ratio=-0.5,fill=red,minimum width=0.3cm] at (6,2) {};
+          \node[star,star points=7,star point ratio=-0.7,fill=yellow,minimum width=0.5cm] at (2.5,2) {};
+          \node[star,star points=5,star point ratio=-0.5,fill=red,minimum width=0.3cm] at (2.5,2) {};
+        \end{tikzpicture}
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

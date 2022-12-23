@@ -1,0 +1,32 @@
+      \begin{MyInnerBox}{Year 9 and above}
+        How many set of three positive integers, \(a,\;b,\;c\) satisfy the following two conditions simultaneously?\par
+        \begin{align}
+          6ab &= c^{2}\\
+          a<b<c&\leq 35
+        \end{align}
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        We see from the second condition that the three integers must be different.\par
+        From the first condition we can see that \(c\) must be a multiple of \(6\).\par
+        So \(c\) could be \(6,\;12,\;18,\;24\) or \(30\).\par
+        Now we need \(a\) and \(b\) such that \(a\times b=\frac{c^{2}}{6}\). Let's look at the possibilities.\par
+        \begin{tabular}{l|c|c|c|c|c|l}
+          No. & \(c\) & \(c^{2}\) & \(\sfrac{c^{2}}{6}\) & \(a\) & \(b\) &\\\hline
+          \(1\) & \(6\) & \(36\) & \(6\) & \(2\) & \(3\) & Solution\\
+          \(2\) & \(12\) & \(144\) & \(24\) & \(2\) & \(12\) & Two digits the same, not a solution\\
+          \(3\) & " & " & \(24\) & \(3\) & \(8\) & Solution\\
+          \(4\) & " & " & \(24\) & \(4\) & \(6\) & Solution\\
+          \(5\) & \(18\) & \(324\) & \(56\) & \(4\) & \(14\) & Solution\\
+          \(6\) & " & " & \(56\) & \(7\) & \(8\) & Solution\\
+          \(7\) & \(24\) & \(576\) & \(96\) & \(6\) & \(16\) & Solution\\
+          \(8\) & " & " & \(96\) & \(8\) & \(12\) & Solution\\
+          \(9\) & \(30\) & \(900\) & \(150\) & \(6\) & \(25\) & Solution\\
+          \(10\) & " & " & \(150\) & \(10\) & \(15\) & Solution
+        \end{tabular}\par\medskip
+        So we have nine solutions, in triplets \((a,\;b,\;c)\) they are\\
+        \((2,3,6),\;(3,8,12),\;(4,6,12),\;(4,14,18),\;(7,8,18),\)\\
+        \((6,16,24),\;(8,12,24),\;(6,25,30),\;(10,15,30)\)\\
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

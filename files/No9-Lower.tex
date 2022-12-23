@@ -1,0 +1,23 @@
+   \begin{MyInnerBox}{Year 9 and below}
+      If
+      \begin{equation*}
+        ax = by = cz = 5\qquad\qquad\text{  and  }\qquad\qquad \frac{1}{x} + \frac{1}{y} + \frac{1}{z} = 4
+      \end{equation*}
+      What is the value of \(a + b + c\)?
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Notice that we need to find a relationship between \(a\), \(b\) and \(c\), so we could try eliminating \(x\), \(y\) and \(z\). Using the first set of equations, we can rewrite them as:\par
+        \begin{alignat*}{4}
+          ax &= 5 &\qquad\qquad by &= 5 &\qquad\qquad cz &= 5\\
+          \frac{1}{x} &= \frac{a}{5} & \frac{1}{y} &= \frac{b}{5} & \frac{1}{z} &= \frac{c}{5}
+        \end{alignat*}
+        Now we can substitute these into the second equation of the question:
+        \begin{align*}
+          \frac{a}{5} + \frac{b}{5} + \frac{c}{5} &= 4\\
+          5\left(\frac{a}{5} + \frac{b}{5} + \frac{c}{5}\right) &= 5\times 4\\
+          a + b + c &= 20
+        \end{align*}
+      \end{MySolutionBox}
+    }{}%conditional output end
+    \end{MyInnerBox}
+

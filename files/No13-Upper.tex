@@ -1,0 +1,67 @@
+      \begin{MyInnerBox}{Year 9 and above}
+        \begin{minipage}[t]{0.5\linewidth}
+          \strut\vspace*{-\baselineskip}\newline
+        The diagram shows a trapezium. The line of length \(\SI{3}{\cm}\) is perpendicular to the two parallel lines of the trapezium. The purple area is \(\SI{6}{\square\cm}\) greater than the green area. Find the length \(x\).\par
+        \end{minipage}%
+        \begin{minipage}[t]{0.5\linewidth}
+          \strut\vspace*{-\baselineskip}\newline
+        \begin{tikzpicture}[scale=0.80]
+          \draw (0,0) coordinate (A) -- (9,0) coordinate (B) -- (9,6) coordinate (C) node[right,midway] {\(3\)} -- (3,6) coordinate (D)  -- cycle node[left,midway] {\(x\)};
+          \draw[name path=AC] (A) -- (C);
+          \draw[name path=BD] (B) -- (D);
+          \path[name intersections={of=AC and BD,by=M}];
+          \filldraw[black,fill=Green2, line join=bevel] (C) -- (D) -- (M) -- cycle;
+          \filldraw[black,fill=DarkOrchid1, line join=bevel] (A) -- (B) -- (M) -- cycle;
+          \iftoggle{SOLUTION}{
+            \node[below left] at (A) {\(A\)};
+            \node[below right] at (B) {\(B\)};
+            \node[above right] at (C) {\(C\)};
+            \node[above left] at (D) {\(D\)};
+            \node[left=0.2] at (M) {\(M\)};
+            \node[below] at (4.5,0) {\(a\)};
+            \node[above] at (6,6) {\(b\)};
+            \draw[dashed,Stealth-Stealth] let \p1=(M) in (9.7,0) -- (9.7,\y1) node[midway,fill=white] {\(h\)};
+            \draw[dashed,Stealth-Stealth] let \p1=(M) in (9.7,\y1) -- (9.7,6) node[midway,fill=white] {\(3-h\)};
+            % \node[] (H) at (M-|B) {*}; % can use this to get y-coord of M
+            \draw[dashed] (3,0) node[below] {\(N\)} -- (D);
+            \markangle{A}{C}{B}{6mm}{0mm}{}{yellow}{1}{1}
+            \markangle{C}{A}{D}{6mm}{0mm}{}{yellow}{1}{1}
+            \markangle{B}{A}{D}{6mm}{0mm}{}{Tomato1}{1}{1}
+            \markangle{D}{B}{C}{6mm}{0mm}{}{Tomato1}{1}{1}
+          }{}
+        \end{tikzpicture}
+      \end{minipage}\par%
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Surprisingly, we don't need to know much about trapeziums, other than that \(AB\parallel DC\), to solve this interesting geometry puzzle. It's more important to remember similar triangles, triangle area, and good old Pythagoras. To help us proceed, we add some labels, the vertical height \(h\) of the point \(M\) where the two diagonals intersect, and we make a right-angled triangle \(\bigtriangleup ADN\).\par
+        By Pythagoras:
+        \begin{align}
+          x^{2} &= 3^{2} + (a-b)^{2}
+          \shortintertext{Area \(P\) of the purple triangle, \(\bigtriangleup ABM\):}
+          P &= \frac{1}{2} ah
+          \shortintertext{Area \(G\) of the green triangle, \(\bigtriangleup CDM\):}
+          G &= \frac{1}{2} b(3-h)
+          \shortintertext{but we know \(P = G + 6\), use Equations 2 \& 3:}
+          \frac{1}{2}ah &= 6 + \frac{1}{2}b(3-h)\notag\\
+          ah &= 12 + 3b - bh\notag\\
+          (a+b)h &= 12 + 3b
+          \intertext{Now \(\angle CAB = \angle ACD\) and \(\angle ABD = \angle CDB\) so the purple triangle\(\bigtriangleup ABM\) and the green triangle \(\bigtriangleup CDM\) are similar. So equivalent distances in each triangle differ by the same proportion. For example DM is to BM as \(b\) is to \(a\). Also CM is to AM as \((3-h)\) is to \(h\). Therefore,}
+          a:b &:: h:(3-h) \notag
+          \shortintertext{that is,}
+          \frac{a}{b} &= \frac{h}{3-h} \notag\\
+          3a - ah &= bh \notag\\
+          (a+b)h &= 3a
+          \intertext{Now we set Equation 4 equal to Equation 5, eliminating \(h\):}
+          3a &= 12 + 3b \notag\\
+          a - b &= 4
+          \intertext{now we can use Equation 6 to substitute \(4\) for \(a-b\) in Equation 1.}
+          x^{2} &= 9 + 4^{2} \notag\\
+          x^{2} &= 25 \notag\\
+          x &= \pm 5 \notag
+          \shortintertext{but distance \(x\) must be positive, so}
+          x &= 5 \notag
+        \end{align}
+      \end{MySolutionBox}
+      }{}%conditional output end
+    \end{MyInnerBox}
+

@@ -1,0 +1,44 @@
+      \begin{MyInnerSplitBox}{Year 8 and above}
+        The diagram contains four squares. The smallest square has an area of \SI{5}{\square\cm}.
+Find the area of the shaded triangle.
+      \iftoggle{SOLUTION}{%conditional output begin
+        \begin{MySolutionBox}
+          If you remember that the area of a triangle is half the base times the height, this problem becomes easier. Can you see that the dashed line EC is parallel to the side of the triangle JK? This is because they are both the diagonals in squares so their slope must be the same.\par
+          If we move the vertex of the blue triangle at E along the dotted line to C, the base JK stays the same and so does its height, thus its area also stays the same. In other words, we have shown that \(\bigtriangleup KEJ\) has the same area as the green \(\bigtriangleup CJK\).\par
+          Now we can do the same trick again. Line BK is parallel to line JC, so if we now move vertex K of the green triangle along the dotted line BK to B, we end up with \(\bigtriangleup BCJ\).\par
+          The triangle fills half of the square, which has area four times that of the smallest square. So the triangle has an area of \SI{10}{\square\cm}.
+         \end{MySolutionBox}
+       }{}%conditional output end
+      \tcblower
+      \begin{tikzpicture}[scale=1]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (1,0);
+        \coordinate (C) at (3,0);
+        \coordinate (D) at (8,0);
+        \coordinate (E) at (8,5);
+        \coordinate (F) at (3,5);
+        \coordinate (G) at (3,2);
+        \coordinate (H) at (0,2);
+        \coordinate (I) at (1,1);
+        \coordinate (J) at (1,2);
+        \coordinate (K) at (0,1);
+        \draw (A) -- (D) -- (E) -- (F) -- (G) -- (H) -- cycle;
+        \draw (B) -- (J);
+        \draw (K) -- (I);
+        \draw (C) -- (G);
+        \filldraw[fill=LightSkyBlue1,opacity=0.5] (K) -- (J) -- (E) --cycle;
+        \node at (0.5,0.5) {\(5\)};
+        \iftoggle{SOLUTION}{
+          \draw[dashed,-Stealth] (E) -- (C);
+          \draw[dotted,-Stealth] (K) -- (B);
+          \node[below] at (A) {A};
+          \node[below] at (B) {B};
+          \node[below] at (C) {C};
+          \node[above] at (E) {E};
+          \node[left] at (K) {K};
+          \node[above] at (J) {J};
+          \filldraw[fill=DarkOliveGreen1,opacity=0.5] (K) -- (J) -- (C);
+        }{}
+      \end{tikzpicture}
+    \end{MyInnerSplitBox}
+

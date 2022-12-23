@@ -1,0 +1,50 @@
+      \begin{MyInnerSplitBox}{Year 9 and above}
+        The lengths of the sides of the three squares are consecutive integers. Find the area covered by the three squares.\par
+      \iftoggle{SOLUTION}{%conditional output begin
+      \begin{MySolutionBox}
+        Let's call the length of the side of the smallest square \(a\).\par
+        We can then write some of the other dimensions in terms of \(a\), and find the dimensions of the rectangular overlap of the larger two squares.\par
+        Triangles \(\bigtriangleup ABC\) and \(\bigtriangleup ADE\) are congruent so \(ED=2\).\par
+        Applying Pythagoras' Thm. to \(\bigtriangleup BDF\) we have,\par
+        \begin{align*}
+          4^{2} + (2a+2)^{2} &= (4\sqrt{10})^{2}\\
+          4a^2 + 8a + 4 &= 160\\
+          4a^{2} + 8a + 20 - 160 &= 0\\
+          a^{2} + 2a - 35 &= 0\\
+          (a+7)(a-5) &= 0
+        \end{align*}
+        Distance must be positive, so we reject the \(a=-7\) solution, and take \(a=5\).\par
+        Now the total area is,
+        \begin{align*}
+          5^{2} + (5+1)^{2} + (5+2)^{2} &= 25 + 36 + 49\\
+                                        &= 110\\
+          \shortintertext{minus the overlapping rectangle,}
+          110 - 2\times 1 &= \SI{108}{\square\cm}
+        \end{align*}
+      \end{MySolutionBox}
+    }{}%conditional output end
+        \tcblower
+        \begin{tikzpicture}[scale=0.6]
+          \draw[black,thick,fill=RosyBrown1] (0,0) coordinate (A) -- (6,0) coordinate (B) -- (6,6) coordinate (C) -- (0,6) coordinate (D) -- cycle;
+          \draw[black,thick,fill=PaleTurquoise1] (B) -- (11,0) coordinate (E) -- (11,5) coordinate (F) -- (6,5) coordinate (G) -- cycle;
+          \draw[black,thick,fill=NavajoWhite1,opacity=0.4] (4,5) coordinate (H) -- (F) -- (11,12) coordinate (I) -- (4,12) coordinate (J) -- cycle;
+          \draw[Stealth-Stealth,Tomato4] (8,0) -- (J) node[pos=0.7,right] {\(4\sqrt{10}\)};
+          \draw[dashed] (H) -- (4,0);
+          \iftoggle{SOLUTION}{
+            \node[below] (M) at (8.5,0) {\(a\)};
+            \node[below] (N) at (2.5,0) {\(a+1\)};
+            \node[above] (O) at (7.5,12) {\(a+2\)};
+            \node[above] (P) at (2,6) {\(a-1\)};
+            \node[below] (Q) at (5,5) {\(2\)};
+            \node[left] (R) at (4,5.5) {\(1\)};
+            \node[above right] at (C) {\(A\)};
+            \node[above] at (J) {\(B\)};
+            \node[below] at (7.7,0) {\(D\)};
+            \node[above right] at (4,6) {\(C\)};
+            \node[below] at (B) {\(E\)};
+            \node[below] at (4,0) {\(F\)};
+            \draw[dashed,Stealth-Stealth] (3.3,6) -- (3.3,12) node[midway,fill=white,inner sep=0mm] {\(a+1\)};
+          }{}
+        \end{tikzpicture}
+    \end{MyInnerSplitBox}
+
